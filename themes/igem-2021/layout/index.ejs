@@ -1,0 +1,15 @@
+<section id="index-main-section">
+  <h1><%= theme.top_page.project_name %></h1>
+  <h3><%= theme.top_page.project_description %></h3>
+  <a href="/">Go to Description</a>
+</section>
+<% for (let [i, sec] of theme.top_page.sections.entries()) { %>
+  <section class="index-normal-section <%= i % 2 === 0 ? 'index-section-even' : 'index-section-odd' %>">
+    <div class="image-temp"></div>
+    <div class="index-sec-separator"></div>
+    <div class="index-sec-content">
+      <h2><%= sec.title %></h2>
+      <%= sec.description %>
+    </div>
+  </section>
+<% } %>
