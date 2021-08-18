@@ -1,5 +1,14 @@
 header-height = 52px
 
+@font-face
+  font-family FontAwesome
+  font-style normal
+  font-weight normal
+  src url("https://2021.igem.org/wiki/images/b/bf/T--UTokyo--fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("https://2021.igem.org/wiki/images/0/01/T--UTokyo--fontawesome-webfont.woff?v=4.7.0") format("woff"), url("https://2021.igem.org/wiki/images/b/bc/T--UTokyo--fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("https://2021.igem.org/wiki/images/3/36/T--UTokyo--fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg")
+
+.fa
+  font-family FontAwesome
+
 body
   margin 0
 
@@ -90,10 +99,10 @@ header
     font-size 18px
 
 .index-section-odd
-  background-color #C4C4C4
+  background-color white
 
 .index-section-even
-  background-color white
+  background-color #C4C4C4
   flex-direction row-reverse
 
 .index-sec-separator
@@ -106,5 +115,17 @@ h2
   font-weight 500
   font-size 36px
 
+h3
+  font-family Roboto
+  font-style normal
+  font-weight 500
+  font-size 24px
+
 footer
-  text-align center
+  background-color #C4C4C4
+  height 520px
+  padding 40px 12.5vw
+
+  #footer-inner
+    img
+      float left
