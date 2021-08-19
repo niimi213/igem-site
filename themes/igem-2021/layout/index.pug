@@ -1,0 +1,15 @@
+section#index-main-section
+  h1 #{theme.top_page.project_name}
+  h3 #{theme.top_page.project_description}
+  a(href="/")
+    | Go to Description&nbsp;
+    i.fas.fa-angle-right
+- for (let [i, sec] of theme.top_page.sections.entries())
+  section(
+    class=`index-normal-section index-section-${i % 2 === 0 ? 'even' : 'odd'}`
+  )
+    .image-temp
+    .index-sec-separator
+    .index-sec-content
+      h2 #{sec.title}
+      = sec.description

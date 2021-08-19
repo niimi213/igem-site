@@ -1,0 +1,10 @@
+{
+  "name": "hexo-theme-igem-2021",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "hexo-renderer-pug": "^2.0.0",
+    "hexo-renderer-stylus": "^2.0.1"
+  }
+}
