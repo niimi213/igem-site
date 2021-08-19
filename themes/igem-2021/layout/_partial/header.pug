@@ -1,5 +1,7 @@
 header
-  h2 #{config.title}
+  h2
+    // Wikiでは/じゃなくて./
+    a(href="/") #{config.title}
   nav#header-nav
     - for (let i in theme.menu)
-      a #{i}
+      a(href=theme.menu[i]) #{i}

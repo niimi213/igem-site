@@ -1,10 +1,11 @@
 menu:
-  Project: /Project
-  Model: /Model
-  Human Practices: /Human-Practices
-  Parts: /Parts
-  Team: /Team
-  Medal: /Medal
+  Project: ./Project
+  # 最後の/はWikiでは消さなければいけない
+  Model: ./Model/
+  Human Practices: ./Human-Practices
+  Parts: ./Parts
+  Team: ./Team
+  Medal: ./Medal
 
 top_page:
   project_name: UTokyo 2021
