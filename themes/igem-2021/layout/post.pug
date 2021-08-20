@@ -1,1 +1,5 @@
-!= partial('_partial/article', { post: page })
+.contents-wrapper
+  .page-navigation
+    != toc(page.content)
+  article.post
+    != partial('_partial/article', { post: page })
