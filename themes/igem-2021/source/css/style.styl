@@ -16,6 +16,7 @@ header
   position fixed
   top 0
   left 0
+  z-index 2
   width 100%
   height header-height
   background rgba(255, 255, 255, 0.8)
@@ -51,10 +52,11 @@ header
     a
       margin-left 50px
 
+index-main-section-height = 650px
 #index-main-section
   padding-top header-height
-  background-color #F3F3F3
-  height 650px
+  background-color #FFFFF5
+  height index-main-section-height
   text-align center
 
   h1
@@ -82,17 +84,29 @@ header
     background-color #99C1C1
     border-radius 6px
     margin-top 20px
-
     :hover
       color black
       text-decoration none
+  svg.index-back
+    height index-main-section-height + header-height
+
+index-normal-section-height = 600px
+.index-section
+  position relative
+  svg.index-back
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height index-normal-section-height
 
 .index-normal-section
-  height 600px
+  height index-normal-section-height
   font-family Roboto
   display flex
   flex-direction row
   padding 60px 12.5vw
+  box-sizing border-box
 
   .image-temp
     flex 1
@@ -103,10 +117,10 @@ header
     font-size 18px
 
 .index-section-odd
-  background-color white
+  background-color #FFFFF7
 
 .index-section-even
-  background-color #C4C4C4
+  background-color #D3F1FB
   flex-direction row-reverse
 
 .index-sec-separator
