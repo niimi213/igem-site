@@ -14,11 +14,12 @@ section#index-main-section.index-section
     ellipse(cx="1317" cy="214" rx="129" ry="120" filter="blur(5px)")
     ellipse(cx="1214" cy="379" rx="141" ry="181" transform="rotate(22.84, 1214, 379)" filter="blur(5px)")
     ellipse(cx="607" cy="727" rx="61" ry="45" transform="rotate(-20.21, 607, 727)" filter="blur(5px)")
-  h1 #{theme.top_page.project_name}
-  h3 #{theme.top_page.project_description}
-  a(href="/")
-    | Go to Description&nbsp;
-    i.fas.fa-angle-right
+  #index-main-section-content
+    h1 #{theme.top_page.project_name}
+    h3 #{theme.top_page.project_description}
+    a(href="/")
+      | Go to Description&nbsp;
+      i.fas.fa-angle-right
 - for (let [i, sec] of theme.top_page.sections.entries())
   section(
     class=`index-section index-normal-section index-section-${i % 2 === 0 ? 'even' : 'odd'}`
@@ -30,6 +31,7 @@ section#index-main-section.index-section
           ellipse(cx="607" cy="727" rx="61" ry="45" transform="rotate(-20.21, 607, 727)" filter="blur(5px)")
           ellipse(cx="65" cy="1123" rx="180" ry="130" transform="rotate(-17.6, 65, 1123)" filter="blur(5px)")
           ellipse(cx="1422" cy="1197" rx="88" ry="125" transform="rotate(-17.6, 1422, 1197)" filter="blur(5px)")
+        img#kingyo(src="https://2021.igem.org/wiki/images/3/3e/T--UTokyo--kingyo.svg" width="106" height="142")
       when 1
         svg.index-back(viewBox="0 1302 1440 600" xmlns="http://www.w3.org/2000/svg" fill="rgba(174, 229, 248, 0.5)" preserveAspectRatio="none")
           ellipse(cx="1422" cy="1197" rx="88" ry="125" transform="rotate(-17.6, 1422, 1197)" filter="blur(5px)")
