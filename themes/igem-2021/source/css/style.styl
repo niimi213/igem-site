@@ -1,4 +1,5 @@
 header-height = 52px
+igem-menu-height = 18px
 
 @font-face
   font-family FontAwesome
@@ -12,9 +13,41 @@ header-height = 52px
 body
   margin 0
 
-header
+#bodyContent
+  font-size 16px
+  line-height normal
+  h1
+    padding 0
+    margin 39.84px 0
+    overflow visible
+  h2
+    padding 0
+    margin 0.83em 0
+    overflow visible
+  h3
+    padding 0
+    margin 1em 0
+    overflow visible
+  a
+    color black
+    &:hover
+      text-decoration none
+    &:focus
+      text-decoration none
+
+  p
+    font-family inherit
+    font-size inherit
+    margin 1em 0
+
+  #toc, .toc
+    border none
+    background-color inherit
+    font-size inherit
+
+#bodyContent header
   position fixed
-  top 0
+  top igem-menu-height
   left 0
   z-index 2
   width 100%
@@ -140,19 +173,19 @@ index-normal-section-height = 600px
   height auto
 
 // generalなhxとして
-h1
+#bodyContent h1
   font-family Roboto
   font-style normal
   font-weight 500
   font-size 48px
 
-h2
+#bodyContent h2
   font-family Roboto
   font-style normal
   font-weight 500
   font-size 36px
 
-h3
+#bodyContent h3
   font-family Roboto
   font-style normal
   font-weight 500
@@ -197,7 +230,7 @@ footer
     height 40px
     line-height 40px
 
-.contents-wrapper
+#bodyContent .contents-wrapper
   margin 90px 12.5vw
   display flex
   font-family Lato
@@ -241,7 +274,7 @@ footer
       text-align center
       line-height 320px
 
-.gallery
+#bodyContent .gallery
   font-family Roboto
   display flex
   gap 60px

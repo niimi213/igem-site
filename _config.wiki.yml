@@ -1,0 +1,11 @@
+# configurations loaded when generated to igem wiki
+permalink: :title
+theme_config:
+  menu:
+    # 最後の/はWikiでは消さなければいけない、また最初も/じゃなくて./にする
+    Project: /Team:UTokyo/Project
+    Model: /Team:UTokyo/Model
+    Human Practices: /Team:UTokyo/Human-Practices
+    Parts: /Team:UTokyo/Parts
+    Team: /Team:UTokyo/Team
+    Medal: /Team:UTokyo/Medal
