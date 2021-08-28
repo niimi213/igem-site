@@ -16,6 +16,7 @@ header
   position fixed
   top 0
   left 0
+  z-index 1
   width 100%
   height header-height
   background rgba(255, 255, 255, 0.8)
@@ -47,7 +48,7 @@ header
     justify-content flex-end
     margin-right 12.5%
     font-family Roboto
-
+    
     a
       margin-left 50px
 
@@ -173,14 +174,16 @@ footer
 .contents-wrapper
   margin 90px 12.5vw
   display flex
+  vertical-align top
   font-family Lato
   font-size 18px
-
+  
   .page-navigation
-    position fixed
+    z-index 0
     width 280px
+    position absolute
     margin-right 40px
-    background-color white
+    background-color gray
     .toc-number
       display none
     ol
@@ -195,7 +198,6 @@ footer
       color black
       text-decoration none
       font-family Roboto
-
   article.post
     margin-left 320px
     .eyecatch
