@@ -12,6 +12,7 @@ Yeasts response surrounding oxygen concentration in various ways. Transcriptiona
 
 HAP factors are known to regulate downstream gene transcription in collaboration with heme. They are activated when they bind to two HemeO2, the O2-binding form of heme.
 According to this signaling pathway, we have established a model below. 
+
 ### 1
 ### 2
 ### 3

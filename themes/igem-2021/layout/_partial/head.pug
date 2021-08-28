@@ -3,14 +3,20 @@ head
   meta(http-equiv="X-UA-Compatible" content="IE=edge")
   meta(name="viewport" content="width=device-width, initial-scale=1.0")
   title #{config.title}
-  // Todo: iGEM Directory内部に入れる
+  //- Todo: iGEM Directory内部に入れる
   link(rel="preconnect" href="https://fonts.googleapis.com")
   
   link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
   link(href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet")
   link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet")
+  link(rel="stylesheet" href="https://2021.igem.org/Template:UTokyo/lib/normalize-css?action=raw&ctype=text/css")
   script(defer src="https://2021.igem.org/Template:UTokyo/igem-2021/js/font-awesome-js?action=raw&ctype=text/javascript")
-  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+  link(rel="stylesheet" href="https://2021.igem.org/Template:UTokyo/lib/format-css?action=raw&ctype=text/css")
+  if isWiki()
+    link(rel="stylesheet" href="https://2021.igem.org/Template:UTokyo/lib/style-css?action=raw&ctype=text/css")
+  else
+    != css('css/style')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
   script.
     $(function(){
       var $endPosition = $("footer"); //スクロール終了位置

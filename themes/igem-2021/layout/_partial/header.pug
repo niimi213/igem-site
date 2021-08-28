@@ -1,7 +1,9 @@
 header
   h2
-    // Wikiでは/じゃなくて./
-    a(href="/") #{config.title}
+    if (isWiki())
+      a(href="/Team:UTokyo") #{config.title}
+    else
+      a(href="/") #{config.title}
   nav#header-nav
     - for (let i in theme.menu)
       a(href=theme.menu[i]) #{i}

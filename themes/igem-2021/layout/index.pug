@@ -1,15 +1,44 @@
-section#index-main-section
-  h1 #{theme.top_page.project_name}
-  h3 #{theme.top_page.project_description}
-  a(href="/")
-    | Go to Description&nbsp;
-    i.fas.fa-angle-right
+section#index-main-section.index-section
+  svg.index-back(viewBox="0 0 1440 702" xmlns="http://www.w3.org/2000/svg" fill="rgba(174, 229, 248, 0.5)" preserveAspectRatio="none")
+    ellipse(cx="36" cy="117" rx="125" ry="86" transform="rotate(19.27, 36, 117)" filter="blur(5px)")
+    ellipse(cx="145" cy="197" rx="51" ry="43" filter="blur(5px)")
+    ellipse(cx="-66" cy="384" rx="166" ry="130" filter="blur(5px)")
+    ellipse(cx="104" cy="531" rx="177" ry="140" transform="rotate(5.66, 104, 479)" filter="blur(5px)")
+    ellipse(cx="223" cy="369" rx="33" ry="27" filter="blur(5px)")
+    ellipse(cx="346" cy="519" rx="124" ry="98" transform="rotate(-21.69, 346, 467)" filter="blur(5px)")
+    ellipse(cx="495" cy="509" rx="62" ry="53" transform="rotate(15.53, 495, 457)" filter="blur(5px)")
+    ellipse(cx="91" cy="709" rx="179" ry="168" transform="rotate(96.13, 91, 657)" filter="blur(5px)")
+    ellipse(cx="1096" cy="158" rx="34" ry="30" transform="rotate(-16.21, 1096, 106)" filter="blur(5px)")
+    ellipse(cx="1315" cy="-25" rx="258" ry="222" filter="blur(5px)")
+    ellipse(cx="1440" cy="185" rx="135" ry="109" transform="rotate(7.21, 1440, 185)" filter="blur(5px)")
+    ellipse(cx="1317" cy="214" rx="129" ry="120" filter="blur(5px)")
+    ellipse(cx="1214" cy="379" rx="141" ry="181" transform="rotate(22.84, 1214, 379)" filter="blur(5px)")
+    ellipse(cx="607" cy="727" rx="61" ry="45" transform="rotate(-20.21, 607, 727)" filter="blur(5px)")
+  #index-main-section-content
+    h1 #{theme.top_page.project_name}
+    h3 #{theme.top_page.project_description}
+    a(href="/")
+      | Go to Description&nbsp;
+      i.fas.fa-angle-right
 - for (let [i, sec] of theme.top_page.sections.entries())
   section(
-    class=`index-normal-section index-section-${i % 2 === 0 ? 'even' : 'odd'}`
+    class=`index-section index-normal-section index-section-${i % 2 === 0 ? 'even' : 'odd'}`
   )
+    case i
+      when 0
+        svg.index-back(viewBox="0 702 1440 600" xmlns="http://www.w3.org/2000/svg" fill="rgba(255, 255, 245, 0.5)" preserveAspectRatio="none")
+          ellipse(cx="91" cy="709" rx="179" ry="168" transform="rotate(96.13, 91, 657)" filter="blur(5px)")
+          ellipse(cx="607" cy="727" rx="61" ry="45" transform="rotate(-20.21, 607, 727)" filter="blur(5px)")
+          ellipse(cx="65" cy="1123" rx="180" ry="130" transform="rotate(-17.6, 65, 1123)" filter="blur(5px)")
+          ellipse(cx="1422" cy="1197" rx="88" ry="125" transform="rotate(-17.6, 1422, 1197)" filter="blur(5px)")
+        img#kingyo(src="https://2021.igem.org/wiki/images/3/3e/T--UTokyo--kingyo.svg" width="106" height="142")
+      when 1
+        svg.index-back(viewBox="0 1302 1440 600" xmlns="http://www.w3.org/2000/svg" fill="rgba(174, 229, 248, 0.5)" preserveAspectRatio="none")
+          ellipse(cx="1422" cy="1197" rx="88" ry="125" transform="rotate(-17.6, 1422, 1197)" filter="blur(5px)")
+          ellipse(cx="1395" cy="1486" rx="51" ry="44" transform="rotate(-38.44, 1395, 1486)" filter="blur(5px)")
     .image-temp
     .index-sec-separator
     .index-sec-content
       h2 #{sec.title}
       = sec.description
+      
