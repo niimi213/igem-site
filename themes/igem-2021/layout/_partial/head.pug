@@ -5,6 +5,7 @@ head
   title #{config.title}
   //- Todo: iGEM Directory内部に入れる
   link(rel="preconnect" href="https://fonts.googleapis.com")
+  
   link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
   link(href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet")
   link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet")
@@ -15,3 +16,31 @@ head
     link(rel="stylesheet" href="https://2021.igem.org/Template:UTokyo/lib/style-css?action=raw&ctype=text/css")
   else
     != css('css/style')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+  script.
+    $(function(){
+      var $endPosition = $("footer"); //スクロール終了位置
+      var $wrapper = $(".contents-wrapper"); //親要素
+      var $sticked = $(".page-navigation");  //固定する要素
+      var offset = $('header').height()+5; //固定位置(top) headerの分だけ下げる
+      var sidebar_top = $wrapper.offset().top;
+      // 固定するコンテンツの元々の位置
+      var sticked_original_top = $sticked.offset().top;
+      // 固定するコンテンツの高さ
+      var sticked_height = $sticked.height();
+      $(window).on('scroll resize', function(){
+        var scrollTop = $(document).scrollTop();
+        var content_bottom = $endPosition.offset().top
+
+        if ((scrollTop > sticked_original_top-offset) && (scrollTop < content_bottom - sticked_height-offset)){
+        // 上部固定
+          $sticked.css({'position': 'fixed', 'top': offset});
+        } else if(scrollTop >= content_bottom - sticked_height-offset){
+        // 下部固定
+          $sticked.css({'position': 'absolute','top': content_bottom - sticked_height-5});
+        } else {
+          $sticked.css({'position': 'static'});
+        }
+      });
+    });
+  != css('css/style')
