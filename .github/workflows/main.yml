@@ -32,6 +32,15 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: yarn
-    - run: npm run build-wiki
-    - run: cd public
-    - run: ls
+    - name: Generate Wiki
+      run: |
+        npm run clean
+        git clone https://github.com/iGEM-UTokyo/igem-generated-site.git public --depth=1
+        npm run build-wiki
+    - name: Commit Wiki
+      working-directory: ./public
+      run: |
+        git status
+        git add .
+        git commit -m "hoge!"
+        git push origin master
