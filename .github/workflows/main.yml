@@ -34,10 +34,10 @@ jobs:
     - run: yarn
     - name: Generate Wiki
       env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_SHUNDROID }}
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
       run: |
         npm run clean &&
-        git clone https://shundroid:${GITHUB_TOKEN}@github.com/iGEM-UTokyo/igem-generated-site public --depth=1 &&
+        git clone https://shundroid:${DEPLOY_TOKEN}@github.com/iGEM-UTokyo/igem-generated-site public --depth=1 &&
         npm run build-wiki
     - name: Commit Wiki
       working-directory: ./public
