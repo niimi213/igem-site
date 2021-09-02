@@ -105,5 +105,14 @@ hexo.extend.filter.register('before_exit', async function() {
     } catch (e) { }
     await fs.writeFile(templatePath + 'lib/CSS', style)
     console.log('style template written')
+  })(), (async () => {
+    const style = await hexo.render.render({
+      path: this.theme_dir + 'source/js/home.js'
+    })
+    try {
+      await fs.mkdir(templatePath + 'lib')
+    } catch (e) { }
+    await fs.writeFile(templatePath + 'lib/home-js', style)
+    console.log('home-js template written')
   })()])
 })
