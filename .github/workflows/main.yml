@@ -48,3 +48,4 @@ jobs:
         git config --global user.name "igem-utokyo-automated"
         git commit -m "hoge!" &&
         git push origin master
+    - run: mkdir /home/runner/.npm
