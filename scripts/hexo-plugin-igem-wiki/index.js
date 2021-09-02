@@ -43,6 +43,23 @@ function removeFolder(path) {
 
 const ignoreFiles = ['.git', 'Team-UTokyo', 'Template-UTokyo', 'Team-UTokyo(index)']
 
+async function writeTemplate(path, content, timestamp) {
+  await fs.writeFile(
+    path,
+    '<html>' + content + '</html>\n<!--' + timestamp + '-->\n'
+  )
+}
+
+async function writeLibTemplate(templatePath, name, content, timestamp) {
+  try {
+    await fs.mkdir(templatePath + 'lib')
+  } catch (e) { }
+  await fs.writeFile(
+    `${templatePath}lib/${name}`,
+    `${content}\n/*${timestamp}*/\n`
+  )
+}
+
 hexo.extend.filter.register('before_exit', async function() {
   if (!isWiki()) {
     return
@@ -54,6 +71,7 @@ hexo.extend.filter.register('before_exit', async function() {
     removeFolder(this.public_dir + 'js')
   ])
   const fileNames = await fs.readdir(this.public_dir)
+  const timestamp = Date.now()
   try {
     await fs.mkdir(this.public_dir + 'Team-UTokyo')
   } catch (e) { }
@@ -61,14 +79,18 @@ hexo.extend.filter.register('before_exit', async function() {
     return (async() => {
       if (ignoreFiles.includes(fileName)) return
       if (fileName === 'index.html') {
-        await fs.rename(this.public_dir + fileName, this.public_dir + 'Team-UTokyo(index)')
+        const newPath = this.public_dir + 'Team-UTokyo(index)'
+        await fs.appendFile(this.public_dir + fileName, `\n<!--${timestamp}-->\n`)
+        await fs.rename(this.public_dir + fileName, newPath)
       } else {
         const stat = await fs.stat(this.public_dir + fileName)
         if (!stat.isFile()) {
           console.log('folder detected: ' + fileName)
+          await fs.appendFile(`${this.public_dir}${fileName}/index.html`, `\n<!--${timestamp}-->\n`)
           await fs.rename(`${this.public_dir}${fileName}/index.html`, `${this.public_dir}Team-UTokyo/${fileName}`)
           await removeFolder(this.public_dir + fileName)
         } else {
+          await fs.appendFile(this.public_dir + fileName, `\n<!--${timestamp}-->\n`)
           await fs.rename(this.public_dir + fileName, `${this.public_dir}Team-UTokyo/${fileName}`)
         }
       }
@@ -83,39 +105,33 @@ hexo.extend.filter.register('before_exit', async function() {
       config: this.config,
       theme: this.config.theme_config
     })
-    await fs.writeFile(templatePath + 'Header', '<html>' + header + '</html>')
+    await writeTemplate(templatePath + 'Header', header, timestamp)
     console.log('header template written')
   })(), (async () => {
     const footer = await hexo.theme.getView('_partial/footer.pug').render({
       config: this.config,
       theme: this.config.theme_config
     })
-    await fs.writeFile(templatePath + 'Footer', '<html>' + footer + '</html>')
+    await writeTemplate(templatePath + 'Footer', footer, timestamp)
     console.log('footer template written')
   })(), (async () => {
     const head = await hexo.theme.getView('_partial/head.pug').render({
       config: this.config,
       theme: this.config.theme_config
     })
-    await fs.writeFile(templatePath + 'Head', '<html>' + head + '</html>')
+    await writeTemplate(templatePath + 'Head', head, timestamp)
     console.log('head template written')
   })(), (async () => {
     const style = await hexo.render.render({
       path: this.theme_dir + 'source/css/style.styl'
     })
-    try {
-      await fs.mkdir(templatePath + 'lib')
-    } catch (e) { }
-    await fs.writeFile(templatePath + 'lib/CSS', style)
+    await writeLibTemplate(templatePath, 'CSS', style, timestamp)
     console.log('style template written')
   })(), (async () => {
-    const style = await hexo.render.render({
+    const script = await hexo.render.render({
       path: this.theme_dir + 'source/js/home.js'
     })
-    try {
-      await fs.mkdir(templatePath + 'lib')
-    } catch (e) { }
-    await fs.writeFile(templatePath + 'lib/home-js', style)
+    await writeLibTemplate(templatePath, 'home-js', script, timestamp)
     console.log('home-js template written')
   })()])
 })
