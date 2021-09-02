@@ -41,6 +41,8 @@ function removeFolder(path) {
   })
 }
 
+const ignoreFiles = ['.git', 'Team-UTokyo', 'Template-UTokyo', 'Team-UTokyo(index)']
+
 hexo.extend.filter.register('before_exit', async function() {
   if (!isWiki()) {
     return
@@ -57,6 +59,7 @@ hexo.extend.filter.register('before_exit', async function() {
   } catch (e) { }
   await Promise.all(fileNames.map(fileName => {
     return (async() => {
+      if (ignoreFiles.includes(fileName)) return
       if (fileName === 'index.html') {
         await fs.rename(this.public_dir + fileName, this.public_dir + 'Team-UTokyo(index)')
       } else {
