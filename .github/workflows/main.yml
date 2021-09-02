@@ -46,6 +46,6 @@ jobs:
         git add . &&
         git config --global user.email "igem-utokyo-automated@example.com",
         git config --global user.name "igem-utokyo-automated"
-        git commit -m "hoge!" &&
+        git commit --allow-empty -m "hoge!" &&
         git push origin master
     - run: mkdir /home/runner/.npm
