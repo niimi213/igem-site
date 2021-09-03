@@ -17,32 +17,4 @@ head
   else
     != css('css/style')
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
-  script.
-    $(function(){
-      var $endPosition = $("footer"); //スクロール終了位置
-      var $wrapper = $(".contents-wrapper"); //親要素
-      var $sticked = $(".page-navigation");  //固定する要素
-      var offset = $('header').height()+5; //固定位置(top) headerの分だけ下げる
-      var sidebar_top = $wrapper.offset().top;
-      // 固定するコンテンツの元々の位置
-      var sticked_original_top = $sticked.offset().top;
-      // 固定するコンテンツの高さ
-      var sticked_height = $sticked.height();
-      //スクロール位置
-      var scrollTop = $(document).scrollTop();
-      $(window).on('scroll resize', function(){
-        var scrollTop = $(document).scrollTop();
-        var content_bottom = $endPosition.offset().top
-
-        if ((scrollTop > sticked_original_top-offset) && (scrollTop < content_bottom - sticked_height-offset)){
-        // 上部固定
-          $sticked.css({'top': offset});
-        } else if(scrollTop >= content_bottom - sticked_height-offset){
-        // 下部固定
-          $sticked.css({'top': content_bottom-scrollTop-sticked_height-5});
-        }else if(scrollTop<=sticked_original_top){
-          $sticked.css({'top': sticked_original_top-scrollTop});
-        }
-      });
-    });
   != css('css/style')
