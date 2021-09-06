@@ -1,9 +1,29 @@
-header
+header#header
   h2
     if (isWiki())
       a(href="/Team:UTokyo") #{config.title}
     else
       a(href="/") #{config.title}
-  nav#header-nav
+  nav.header-nav-pc
     - for (let i in theme.menu)
       a(href=theme.menu[i]) #{i}
+  nav.header-nav-mobile(@click="toggleMenu")
+    span(:class="{ active: !isMenuActive }")
+      i.fas.fa-bars
+    span(:class="{ active: isMenuActive }")
+      i.fas.fa-chevron-up
+  div.header-menu(:class="{ 'header-menu-active': isMenuActive }")
+    - for (let i in theme.menu)
+      a(href=theme.menu[i]) #{i}
+  script.
+    const headerApp = new Vue({
+      el: '#header',
+      data: {
+        isMenuActive: false
+      },
+      methods: {
+        toggleMenu() {
+          this.isMenuActive = !this.isMenuActive
+        }
+      }
+    })
