@@ -59,6 +59,8 @@ body
   display flex
   flex-direction row
   align-items center
+  @media (max-width 767px)
+    justify-content center
 
   a
     color black
@@ -73,17 +75,63 @@ body
     font-weight 500
     font-size 18px
     line-height header-height
+    @media (max-width 767px)
+      margin 0
 
-  nav
+
+  nav.header-nav-pc
     flex 1
     display flex
     flex-direction row
     justify-content flex-end
     margin-right 12.5%
     font-family Roboto
-    
+    @media (max-width 767px)
+      display none
     a
       margin-left 50px
+  nav.header-nav-mobile
+    display none
+    margin-right 12.5%
+    flex-direction column
+    justify-content center
+    position absolute
+    top 0
+    right 0
+    height header-height
+    @media (max-width 767px)
+      display flex
+    svg
+      cursor pointer
+    span
+      display none
+    span.active
+      display block
+
+  .header-menu
+    position absolute
+    left 0
+    top header-height
+    width 100%
+    background-color rgba(255,255,255,0.8)
+    font-family Roboto
+    max-height 0
+    overflow hidden
+    transition max-height .5s ease 0s
+    @media (max-width 767px)
+      &.header-menu-active
+        max-height 50vh
+    a
+      display block
+      height 44px
+      line-height 24px
+      margin 0 40px
+      padding 10px
+      box-sizing border-box
+      border-top 1px solid #C4C4C4
+      &:first-child
+        border none
+
 
 index-main-section-height = 650px
 #index-main-section
