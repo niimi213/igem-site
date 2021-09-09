@@ -4,9 +4,13 @@ header#header
       a(href="/Team:UTokyo") #{config.title}
     else
       a(href="/") #{config.title}
-  nav.header-nav-pc
-    - for (let i in theme.menu)
-      a(href=theme.menu[i]) #{i}
+  nav.header-nav-pc 
+      li(v-for = "item in items" :href="item.url" style={"list-style": "none"})
+        a(v-if="!item.sub" :href="item.url") {{item.name}}
+        a(v-else @mouseover="subMenu" href="item.url") {{item.name}}
+         // ul(:class="isMenuActive")
+         //   li(v-for="child in item.sub"): a(:href="child.url") {{child.name}} 
+
   nav.header-nav-mobile(@click="toggleMenu")
     span(:class="{ active: !isMenuActive }")
       i.fas.fa-bars
@@ -14,16 +18,27 @@ header#header
       i.fas.fa-chevron-up
   div.header-menu(:class="{ 'header-menu-active': isMenuActive }")
     - for (let i in theme.menu)
-      a(href=theme.menu[i]) #{i}
+      a(href=theme.menu[i]) #{i}  
   script.
     const headerApp = new Vue({
       el: '#header',
       data: {
-        isMenuActive: false
+        isMenuActive: false,
+        items:[
+          {url: "/Project",name:"Project",sub:[{url:"#",name:"Attribution"},{url:"#",name:"Collabolation"}]},
+          {url:"/Model",name:"Model"},
+          {url:"/Human Practices",name:"Human Practices"},
+          {url:"/Parts",name:"Parts"},
+          {url:"/Team",name:"Team"},
+          {url:"/Medal",name:"Medal"}
+        ]
       },
       methods: {
         toggleMenu() {
           this.isMenuActive = !this.isMenuActive
+        },
+        subMenu(){
+          console.log("hover")
         }
       }
-    })
+    });

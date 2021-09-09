@@ -1,6 +1,10 @@
 menu:
   # 最後の/はWikiでは消さなければいけない、また最初も/じゃなくて./にする
-  Project: /Project/
+  Project:
+    link: /Project/
+    submenus: 
+      Attributions: /Attributions/
+      Collaborations: /Collaborations/    
   Model: /Model/
   Human Practices: /Human-Practices/
   Parts: /Parts/
