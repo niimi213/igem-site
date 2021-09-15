@@ -5,12 +5,17 @@ header#header
     else
       a(href="/") #{config.title}
   nav.header-nav-pc 
-      li(v-for = "item in items" :href="item.url" style={"list-style": "none"})
-        a(v-if="!item.sub" :href="item.url") {{item.name}}
-        a(v-else @mouseover="subMenu" href="item.url") {{item.name}}
-         // ul(:class="isMenuActive")
-         //   li(v-for="child in item.sub"): a(:href="child.url") {{child.name}} 
-
+      - for (let i in theme.menu)
+        -var index = 0;
+        li(style={"list-style": "none",position:"relative"} )
+          a(href=theme.menu[i].link @mouseover="subMenu") #{i}
+          span(:class="{ active:isOpen} ")
+            ul 
+              - for (let j in theme.menu[i].submenus)
+                -index = index + 1;
+                li(id="submenu" style={top:`${30+index*30}px`}) 
+                  a(href=theme.menu[i].submenus[j]) #{j}
+                
   nav.header-nav-mobile(@click="toggleMenu")
     span(:class="{ active: !isMenuActive }")
       i.fas.fa-bars
@@ -18,27 +23,21 @@ header#header
       i.fas.fa-chevron-up
   div.header-menu(:class="{ 'header-menu-active': isMenuActive }")
     - for (let i in theme.menu)
-      a(href=theme.menu[i]) #{i}  
+      a(href=theme.menu[i].link) #{i}  
   script.
     const headerApp = new Vue({
       el: '#header',
       data: {
-        isMenuActive: false,
-        items:[
-          {url: "/Project",name:"Project",sub:[{url:"#",name:"Attribution"},{url:"#",name:"Collabolation"}]},
-          {url:"/Model",name:"Model"},
-          {url:"/Human Practices",name:"Human Practices"},
-          {url:"/Parts",name:"Parts"},
-          {url:"/Team",name:"Team"},
-          {url:"/Medal",name:"Medal"}
-        ]
+          isMenuActive: false,
+          isOpen:false
       },
       methods: {
         toggleMenu() {
           this.isMenuActive = !this.isMenuActive
         },
-        subMenu(){
-          console.log("hover")
-        }
+        subMenu() {
+          console.log(this.isOpen);
+          this.isOpen = !this.isOpen;
+        },
       }
     });

@@ -5,11 +5,19 @@ menu:
     submenus: 
       Attributions: /Attributions/
       Collaborations: /Collaborations/    
-  Model: /Model/
-  Human Practices: /Human-Practices/
-  Parts: /Parts/
-  Team: /Team/
-  Medal: /Medal/
+  Model: 
+    link: /Model/
+    submenus: 
+      mune1: /Attributions/
+      menu2: /Collaborations/  
+  Human Practices: 
+    link: /Human-Practices/
+  Parts: 
+    link: /Parts/
+  Team: 
+    link: /Team/
+  Medal: 
+    link : /Medal/
 
 top_page:
   project_name: UTokyo 2021
