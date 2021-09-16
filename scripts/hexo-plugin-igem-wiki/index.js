@@ -41,7 +41,15 @@ function removeFolder(path) {
   })
 }
 
-const ignoreFiles = ['.git', 'Team-UTokyo', 'Template-UTokyo', 'Team-UTokyo(index)']
+const ignoreFiles = [
+  '.git',
+  '.github',
+  'Team-UTokyo',
+  'Template-UTokyo',
+  'Team-UTokyo(index)',
+  'upload.py',
+  '.gitignore'
+]
 
 async function writeTemplate(path, content, timestamp) {
   await fs.writeFile(
