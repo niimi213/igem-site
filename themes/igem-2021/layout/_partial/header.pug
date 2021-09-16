@@ -6,16 +6,14 @@ header#header
       a(href="/") #{config.title}
   nav.header-nav-pc 
       - for (let i in theme.menu)
-        -var index = 0;
         li(id="menu")
           -if (!theme.menu[i].submenus)
             a(href=theme.menu[i].link id="link") #{i}
           -else
-            span(id="link", @mouseover=`openMenu('${i}')` @mouseleave="closeMenu") #{i}
-              ul(style={top:"40px"} id="submenu" ,:class=`{ active:isOpen==='${i}'}`)
+            span(@mouseover=`openMenu('${i}')` @mouseleave="closeMenu") #{i}
+              ul(id="submenu" ,:class=`{ active:activeMenu==='${i}'}`)
                 - for (let j in theme.menu[i].submenus)
-                  -index = index + 1;
-                  li(style={top:`${index*30}px`}) 
+                  li 
                     a(href=theme.menu[i].submenus[j]) #{j}
                 
   nav.header-nav-mobile(@click="toggleMenu")
@@ -31,19 +29,17 @@ header#header
       el: '#header',
       data: {
           isMenuActive: false,
-          isOpen:""
+          activeMenu:""
       },
       methods: {
         toggleMenu() {
           this.isMenuActive = !this.isMenuActive
         },
         openMenu(value) {
-          console.log(this.isOpen);
-          this.isOpen = value;
+          this.activeMenu = value;
         },
         closeMenu() {
-          console.log(this.isOpen);
-          this.isOpen = "";
+          this.activeMenu = "";
         }
       }
     });

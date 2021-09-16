@@ -5,6 +5,9 @@ theme_config:
     # 最後の/はWikiでは消さなければいけない、また最初も/じゃなくて./にする
     Project: 
       link: /Team:UTokyo/Project
+      submenus:
+        Attributions: /Team:UTokyo/Attributions/
+        Collaborations: /Team:UTokyo/Collaborations/
     Model: 
       link: /Team:UTokyo/Model
     Human Practices: 
