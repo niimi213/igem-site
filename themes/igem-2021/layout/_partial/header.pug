@@ -8,8 +8,8 @@ header#header
       - for (let i in theme.menu)
         -var index = 0;
         li(style={"list-style": "none",position:"relative"} )
-          a(href=theme.menu[i].link @mouseover="subMenu") #{i}
-          span(:class="{ active:isOpen} ")
+          a(href=theme.menu[i].link @mouseover=`subMenu('${i}')`) #{i}
+          span(:class=`{ active:isOpen==='${i}'}`)
             ul 
               - for (let j in theme.menu[i].submenus)
                 -index = index + 1;
@@ -29,15 +29,15 @@ header#header
       el: '#header',
       data: {
           isMenuActive: false,
-          isOpen:false
+          isOpen:""
       },
       methods: {
         toggleMenu() {
           this.isMenuActive = !this.isMenuActive
         },
-        subMenu() {
+        subMenu(value) {
           console.log(this.isOpen);
-          this.isOpen = !this.isOpen;
+          this.isOpen = this.isOpen===value?"":value;
         },
       }
     });
