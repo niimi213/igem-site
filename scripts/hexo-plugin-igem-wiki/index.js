@@ -88,17 +88,14 @@ hexo.extend.filter.register('before_exit', async function() {
       if (ignoreFiles.includes(fileName)) return
       if (fileName === 'index.html') {
         const newPath = this.public_dir + 'Team-UTokyo(index)'
-        await fs.appendFile(this.public_dir + fileName, `\n<!--${timestamp}-->\n`)
         await fs.rename(this.public_dir + fileName, newPath)
       } else {
         const stat = await fs.stat(this.public_dir + fileName)
         if (!stat.isFile()) {
           console.log('folder detected: ' + fileName)
-          await fs.appendFile(`${this.public_dir}${fileName}/index.html`, `\n<!--${timestamp}-->\n`)
           await fs.rename(`${this.public_dir}${fileName}/index.html`, `${this.public_dir}Team-UTokyo/${fileName}`)
           await removeFolder(this.public_dir + fileName)
         } else {
-          await fs.appendFile(this.public_dir + fileName, `\n<!--${timestamp}-->\n`)
           await fs.rename(this.public_dir + fileName, `${this.public_dir}Team-UTokyo/${fileName}`)
         }
       }
