@@ -86,19 +86,36 @@ body
     justify-content flex-end
     margin-right 12.5%
     font-family Roboto
+    height 90%
     @media (max-width 767px)
       display none
     a
       margin-left 50px
-    span
+    ul
       display none
-    span.active
+    ul.active
       display block
+      margin 0px
+    #menu
+      list-style none 
+      position relative
+      margin 0px
+      margin-top 4px
+      
+      a, span   
+        padding 10px 25px
+        margin 0px
+        display block
+        position relative
+        background-color #FFFFFFCC
+      a:hover
+        background-color #ffc9d7
     #submenu
-      display: list-item;
-      list-style: none;
-      position: absolute;
-      left: 0px
+      list-style none
+      position absolute
+      left 0px
+      li
+        display list-item
   nav.header-nav-mobile
     display none
     margin-right 12.5%

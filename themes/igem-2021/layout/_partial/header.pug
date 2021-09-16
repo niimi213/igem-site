@@ -7,14 +7,16 @@ header#header
   nav.header-nav-pc 
       - for (let i in theme.menu)
         -var index = 0;
-        li(style={"list-style": "none",position:"relative"} )
-          a(href=theme.menu[i].link @mouseover=`subMenu('${i}')`) #{i}
-          span(:class=`{ active:isOpen==='${i}'}`)
-            ul 
-              - for (let j in theme.menu[i].submenus)
-                -index = index + 1;
-                li(id="submenu" style={top:`${30+index*30}px`}) 
-                  a(href=theme.menu[i].submenus[j]) #{j}
+        li(id="menu")
+          -if (!theme.menu[i].submenus)
+            a(href=theme.menu[i].link id="link") #{i}
+          -else
+            span(id="link", @mouseover=`openMenu('${i}')` @mouseleave="closeMenu") #{i}
+              ul(style={top:"40px"} id="submenu" ,:class=`{ active:isOpen==='${i}'}`)
+                - for (let j in theme.menu[i].submenus)
+                  -index = index + 1;
+                  li(style={top:`${index*30}px`}) 
+                    a(href=theme.menu[i].submenus[j]) #{j}
                 
   nav.header-nav-mobile(@click="toggleMenu")
     span(:class="{ active: !isMenuActive }")
@@ -35,9 +37,13 @@ header#header
         toggleMenu() {
           this.isMenuActive = !this.isMenuActive
         },
-        subMenu(value) {
+        openMenu(value) {
           console.log(this.isOpen);
-          this.isOpen = this.isOpen===value?"":value;
+          this.isOpen = value;
         },
+        closeMenu() {
+          console.log(this.isOpen);
+          this.isOpen = "";
+        }
       }
     });
