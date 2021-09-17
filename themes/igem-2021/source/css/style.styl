@@ -1,6 +1,6 @@
 header-height = 52px
 igem-menu-height = 18px
-
+eyecatch-height = 320px
 @font-face
   font-family FontAwesome
   font-style normal
@@ -307,7 +307,7 @@ footer
 
 #bodyContent .contents-wrapper
   margin 90px 12.5vw
-  display flex
+  display block
   vertical-align top
   font-family Lato
   font-size 18px
@@ -316,7 +316,7 @@ footer
 
   .page-navigation
     z-index 0
-    top 100px
+    top eyecatch-height+105px
     width 280px
     position fixed
     margin-right 40px
@@ -335,14 +335,14 @@ footer
       color black
       text-decoration none
       font-family Roboto
+  .eyecatch
+    height eyecatch-height
+    width 100%
+    background-color #E5E5E5
+    text-align center
+    line-height 320px
   article.post
     margin-left 320px
-    .eyecatch
-      height 320px
-      background-color #E5E5E5
-      text-align center
-      line-height 320px
-
   article.page
     width 100%
     .eyecatch
