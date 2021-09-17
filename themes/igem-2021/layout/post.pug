@@ -1,9 +1,10 @@
 .contents-wrapper
-  .page-navigation
-    != toc(page.content)
   .eyecatch それっぽい画像あったら、入れると目立っていいかなと思った...
-  article.post
-    != partial('_partial/article', { post: page })
+  .article-wrapper
+    .page-navigation
+      != toc(page.content)
+    article.post
+      != partial('_partial/article', { post: page })
 
 script.
     $(function(){
@@ -14,23 +15,25 @@ script.
       var sidebar_top = $wrapper.offset().top;
       var scrollTop = $(document).scrollTop();
       // 固定するコンテンツの元々の位置
-      var sticked_original_top = $sticked.offset().top-scrollTop;
+      var sticked_original_top = $sticked.parent().offset().top;
       // 固定するコンテンツの高さ
       var sticked_height = $sticked.height();
       //スクロール位置
-      
       var scrollOffset = sticked_original_top-offset
-      $(window).on('scroll resize', function(){
+
+      function updateNavigation() {
         var scrollTop = $(document).scrollTop();
         var content_bottom = $endPosition.offset().top
         if ((scrollTop > sticked_original_top-offset) && (scrollTop < content_bottom - sticked_height-offset)){
         // 上部固定
-          $sticked.css({'top': offset});
+          $sticked.css({'position': 'fixed', 'top': offset});
         } else if(scrollTop >= content_bottom - sticked_height-offset){
         // 下部固定
-          $sticked.css({'top': content_bottom-scrollTop-sticked_height-5});
-        }else if(scrollTop<=sticked_original_top){
-          $sticked.css({'top': sticked_original_top-scrollTop});
+          $sticked.css({'position': 'fixed', 'top': content_bottom-scrollTop-sticked_height-5});
+        }else if(scrollTop<=sticked_original_top - offset){
+          $sticked.css({'position': 'absolute', 'top': '0' });
         }
-      });
+      }
+      $(window).on('scroll resize', updateNavigation)
+      updateNavigation()
     });
