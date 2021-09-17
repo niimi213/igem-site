@@ -1,11 +1,20 @@
 menu:
   # 最後の/はWikiでは消さなければいけない、また最初も/じゃなくて./にする
-  Project: /Project/
-  Model: /Model/
-  Human Practices: /Human-Practices/
-  Parts: /Parts/
-  Team: /Team/
-  Medal: /Medal/
+  Project:
+    link: /Project/
+    submenus: 
+      Attributions: /Attributions/
+      Collaborations: /Collaborations/    
+  Model: 
+    link: /Model/ 
+  Human Practices: 
+    link: /Human-Practices/
+  Parts: 
+    link: /Parts/
+  Team: 
+    link: /Team/
+  Medal: 
+    link : /Medal/
 
 top_page:
   project_name: UTokyo 2021

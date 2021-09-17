@@ -5,8 +5,17 @@ header#header
     else
       a(href="/") #{config.title}
   nav.header-nav-pc
-    - for (let i in theme.menu)
-      a(href=theme.menu[i]) #{i}
+      - for (let i in theme.menu)
+        li.menu
+          -if (!theme.menu[i].submenus)
+            a(href=theme.menu[i].link) #{i}
+          -else
+            span(@mouseover=`openMenu('${i}')` @mouseleave="closeMenu") #{i}
+              ul.submenu(:class=`{ active:activeMenu==='${i}'}`)
+                - for (let j in theme.menu[i].submenus)
+                  li 
+                    a(href=theme.menu[i].submenus[j]) #{j}
+                
   nav.header-nav-mobile(@click="toggleMenu")
     span(:class="{ active: !isMenuActive }")
       i.fas.fa-bars
@@ -14,16 +23,23 @@ header#header
       i.fas.fa-chevron-up
   div.header-menu(:class="{ 'header-menu-active': isMenuActive }")
     - for (let i in theme.menu)
-      a(href=theme.menu[i]) #{i}
+      a(href=theme.menu[i].link) #{i}  
   script.
     const headerApp = new Vue({
       el: '#header',
       data: {
-        isMenuActive: false
+          isMenuActive: false,
+          activeMenu:""
       },
       methods: {
         toggleMenu() {
           this.isMenuActive = !this.isMenuActive
+        },
+        openMenu(value) {
+          this.activeMenu = value;
+        },
+        closeMenu() {
+          this.activeMenu = "";
         }
       }
-    })
+    });
