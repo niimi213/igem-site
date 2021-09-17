@@ -4,14 +4,14 @@ header#header
       a(href="/Team:UTokyo") #{config.title}
     else
       a(href="/") #{config.title}
-  nav.header-nav-pc 
+  nav.header-nav-pc
       - for (let i in theme.menu)
-        li(id="menu")
+        li.menu
           -if (!theme.menu[i].submenus)
-            a(href=theme.menu[i].link id="link") #{i}
+            a(href=theme.menu[i].link) #{i}
           -else
             span(@mouseover=`openMenu('${i}')` @mouseleave="closeMenu") #{i}
-              ul(id="submenu" ,:class=`{ active:activeMenu==='${i}'}`)
+              ul.submenu(:class=`{ active:activeMenu==='${i}'}`)
                 - for (let j in theme.menu[i].submenus)
                   li 
                     a(href=theme.menu[i].submenus[j]) #{j}
