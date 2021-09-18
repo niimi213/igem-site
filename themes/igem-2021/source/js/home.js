@@ -49,7 +49,7 @@ class Cell {
   }
 }
 
-const canvasCount = 3
+const canvasCount = 1 // 3
 const canvases = []
 for (let i = 0; i < canvasCount; i++) {
   canvases.push(document.getElementById(`index-back-${i}`))
@@ -86,6 +86,7 @@ function tick() {
   for (let cellInstance of cellInstances) {
     cellInstance.update()
     const cell = cellInstance.calc()
+    if (!cellElements[cellInstance.index]) continue
     for (let ellipse of cellElements[cellInstance.index]) {
       ellipse.setAttribute('cx', cell.cx)
       ellipse.setAttribute('cy', cell.cy)
@@ -94,3 +95,6 @@ function tick() {
   requestAnimationFrame(tick)
 }
 tick()
+
+const rellax = new Rellax('.rellax')
+

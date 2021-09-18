@@ -1,5 +1,5 @@
-section#index-main-section.index-section
-  svg.index-back#index-back-0(viewBox="0 0 1440 702" xmlns="http://www.w3.org/2000/svg" fill="rgba(174, 229, 248, 0.5)" preserveAspectRatio="none")
+section#index-main-section.index-section.rellax(data-rellax-speed="-5")
+  svg.index-back#index-back-0(viewBox="0 0 1440 702" xmlns="http://www.w3.org/2000/svg" fill="#1E88A888" preserveAspectRatio="none")
   #index-main-section-content
     h1 #{theme.top_page.project_name}
     h3 #{theme.top_page.project_description}
@@ -21,6 +21,7 @@ section#index-main-section.index-section
     .index-sec-content
       h2 #{sec.title}
       = sec.description
+script(src="https://2021.igem.org/Template:UTokyo/lib/rellax-js?action=raw&ctype=text/javascript")
 if isWiki()
   script(src="https://2021.igem.org/Template:UTokyo/lib/home-js?action=raw&ctype=text/javascript")
 else
