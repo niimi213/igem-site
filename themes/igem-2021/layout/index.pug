@@ -13,7 +13,7 @@ section#index-main-section.index-section.rellax(data-rellax-speed="-5")
     case i
       when 0
         svg.index-back#index-back-1(viewBox="0 702 1440 600" xmlns="http://www.w3.org/2000/svg" fill="rgba(255, 255, 245, 0.5)" preserveAspectRatio="none")
-        img#kingyo(src="https://2021.igem.org/wiki/images/3/3e/T--UTokyo--kingyo.svg" width="106" height="142")
+        img#kingyo(src="/assets/theme/img/kingyo.svg" width="106" height="142")
       when 1
         svg.index-back#index-back-2(viewBox="0 1302 1440 600" xmlns="http://www.w3.org/2000/svg" fill="rgba(174, 229, 248, 0.5)" preserveAspectRatio="none")
     .image-temp
@@ -21,8 +21,8 @@ section#index-main-section.index-section.rellax(data-rellax-speed="-5")
     .index-sec-content
       h2 #{sec.title}
       = sec.description
-script(src="https://2021.igem.org/Template:UTokyo/lib/rellax-js?action=raw&ctype=text/javascript")
+script(src="/js/rellax.min.js")
 if isWiki()
-  script(src="https://2021.igem.org/Template:UTokyo/lib/home-js?action=raw&ctype=text/javascript")
+  script(src="/js/home.js")
 else
   != js('js/home')

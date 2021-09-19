@@ -1,0 +1,45 @@
+assets:
+  assets\theme\img\kingyo.svg:
+    link_URL: https://2021.igem.org/wiki/images/f/ff/T--UTokyo--theme--img--kingyo.svg
+    md5: 58f685881a40e8ab23e8b7817312d3b3
+    upload_filename: T--UTokyo--theme--img--kingyo.svg
+  assets\theme\img\logo.svg:
+    link_URL: https://2021.igem.org/wiki/images/b/b8/T--UTokyo--theme--img--logo.svg
+    md5: c4390664185897b641ac42f2df7b7231
+    upload_filename: T--UTokyo--theme--img--logo.svg
+css:
+  css\style.css:
+    link_URL: https://2021.igem.org/Template:UTokyo/css/styleCSS?action=raw&ctype=text/css
+    md5: b40b9d73c8d7bcd2c8dd4bfec09c1c83
+html:
+  Model\index.html:
+    link_URL: https://2021.igem.org/Team:UTokyo/Model
+    md5: 6d6570d4ccf677454a80e2f2233164b9
+  Software\index.html:
+    link_URL: https://2021.igem.org/Team:UTokyo/Software
+    md5: a9d5ddc19164accc72196d8ba9b5df53
+  Team\index.html:
+    link_URL: https://2021.igem.org/Team:UTokyo/Team
+    md5: 090fe972acc3bf8234da34b71dd706a9
+  index.html:
+    link_URL: https://2021.igem.org/Team:UTokyo
+    md5: d2b93d8a15b0c71e300ea7b40d998fd3
+  template\Footer.html:
+    link_URL: https://2021.igem.org/Template:UTokyo/template/Footer
+    md5: 84b2db4f4e89d008068b7720d8088102
+  template\Head.html:
+    link_URL: https://2021.igem.org/Template:UTokyo/template/Head
+    md5: 759ef95af7e6c9083c603c13d5a92aa6
+  template\Header.html:
+    link_URL: https://2021.igem.org/Template:UTokyo/template/Header
+    md5: 28b82092714c65a13b94d3e06a21e90f
+js:
+  js\home.js:
+    link_URL: https://2021.igem.org/Template:UTokyo/js/homeJS?action=raw&ctype=text/javascript
+    md5: df0ffdb7e3010545e74e12af34d43277
+  js\load-php.js:
+    link_URL: https://2021.igem.org/Template:UTokyo/js/load-phpJS?action=raw&ctype=text/javascript
+    md5: 7832608c010ddfc5c250a114b642ad74
+  js\rellax.min.js:
+    link_URL: https://2021.igem.org/Template:UTokyo/js/rellax-minJS?action=raw&ctype=text/javascript
+    md5: c603c319df84051e92f76affd0926d34

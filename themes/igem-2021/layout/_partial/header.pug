@@ -1,9 +1,9 @@
 header#header
   h2
-    if (isWiki())
-      a(href="/Team:UTokyo") #{config.title}
-    else
-      a(href="/") #{config.title}
+    //- if (isWiki())
+    //-   a(href="/Team:UTokyo") #{config.title}
+    //- else
+    a(href="/") #{config.title}
   nav.header-nav-pc
       - for (let i in theme.menu)
         li.menu

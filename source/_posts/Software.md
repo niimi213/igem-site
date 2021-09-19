@@ -14,7 +14,7 @@ We have developed our original deployment system for iGEM Wiki, called **Hexo fo
 
 Hexo for iGEM is a plugin for Hexo. It revises the generating system of Hexo in order to adjust the exported site to iGEM-server environment.
 
-### Using MediaWiki Templates for partial embedding(ちょっと怪しい)
+### Using MediaWiki Templates for partial embedding(ayashii)
 
 If you use general SSGs, common components such as navigation bar or footer are directly embedded to each page. Thus, if you modify the content of footer just a bit, for example, **you have to upload all pages again**. This is a very troublesome situation. Even if you use an automated upload system like iGEM WikiSync developed by iGEM BITS Goa and your trouble is solved, **iGEM server still gets many rewrite requests**, which may slow iGEM server's responses.
 
@@ -22,7 +22,7 @@ In contrast, **Hexo for iGEM is a very iGEM server-friendly system**. It does no
 
 In fact, Hexo's themes internally uses `_partial()` in order to embed some common components. Thus, we can easily adjust the exported site to iGEM server by replacing `_partial('something')` with `{{ something }}`.
 
-### Providing the environment very similar with iGEM server for local testing. (まだ怪しい)
+### Providing the environment very similar with iGEM server for local testing. (ayashii)
 
 Sites which use Hexo is easily tested locally by the command `hexo server`. However, the environment of iGEM server is very complex and far from local testing environment. Thus, we have simulated the iGEM server environment locally. (Todo)
 

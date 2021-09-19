@@ -1,20 +1,20 @@
 # configurations loaded when generated to igem wiki
-permalink: :title
-theme_config:
-  menu:
-    # 最後の/はWikiでは消さなければいけない、また最初も/じゃなくて./にする
-    Project: 
-      link: /Team:UTokyo/Project
-      submenus:
-        Attributions: /Team:UTokyo/Attributions/
-        Collaborations: /Team:UTokyo/Collaborations/
-    Model: 
-      link: /Team:UTokyo/Model
-    Human Practices: 
-      link: /Team:UTokyo/Human-Practices
-    Parts: 
-      link: /Team:UTokyo/Parts
-    Team: 
-      link: /Team:UTokyo/Team
-    Medal: 
-      link: /Team:UTokyo/Medal
+# permalink: :title
+# theme_config:
+#   menu:
+#     # 最後の/はWikiでは消さなければいけない、また最初も/じゃなくて./にする
+#     Project: 
+#       link: /Team:UTokyo/Project
+#       submenus:
+#         Attributions: /Team:UTokyo/Attributions/
+#         Collaborations: /Team:UTokyo/Collaborations/
+#     Model: 
+#       link: /Team:UTokyo/Model
+#     Human Practices: 
+#       link: /Team:UTokyo/Human-Practices
+#     Parts: 
+#       link: /Team:UTokyo/Parts
+#     Team: 
+#       link: /Team:UTokyo/Team
+#     Medal: 
+#       link: /Team:UTokyo/Medal

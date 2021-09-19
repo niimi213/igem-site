@@ -54,7 +54,7 @@ const ignoreFiles = [
 async function writeTemplate(path, content) {
   await fs.writeFile(
     path,
-    '<html>' + content + '</html>\n'
+    '<!-- export --><html>' + content + '</html><!-- /export -->\n'
   )
 }
 
@@ -73,34 +73,35 @@ hexo.extend.filter.register('before_exit', async function() {
     return
   }
   // まずファイルの書き換えなど
-  await Promise.all([
-    removeFolder(this.public_dir + 'archives'),
-    removeFolder(this.public_dir + 'css'),
-    removeFolder(this.public_dir + 'js')
-  ])
-  const fileNames = await fs.readdir(this.public_dir)
-  try {
-    await fs.mkdir(this.public_dir + 'Team-UTokyo')
-  } catch (e) { }
-  await Promise.all(fileNames.map(fileName => {
-    return (async() => {
-      if (ignoreFiles.includes(fileName)) return
-      if (fileName === 'index.html') {
-        const newPath = this.public_dir + 'Team-UTokyo(index)'
-        await fs.rename(this.public_dir + fileName, newPath)
-      } else {
-        const stat = await fs.stat(this.public_dir + fileName)
-        if (!stat.isFile()) {
-          console.log('folder detected: ' + fileName)
-          await fs.rename(`${this.public_dir}${fileName}/index.html`, `${this.public_dir}Team-UTokyo/${fileName}`)
-          await removeFolder(this.public_dir + fileName)
-        } else {
-          await fs.rename(this.public_dir + fileName, `${this.public_dir}Team-UTokyo/${fileName}`)
-        }
-      }
-    })()
-  }))
-  const templatePath = this.public_dir + 'Template-UTokyo/'
+  // await Promise.all([
+  //   removeFolder(this.public_dir + 'archives'),
+  //   removeFolder(this.public_dir + 'css'),
+  //   removeFolder(this.public_dir + 'js')
+  // ])
+  // const fileNames = await fs.readdir(this.public_dir)
+  // try {
+  //   await fs.mkdir(this.public_dir + 'Team-UTokyo')
+  // } catch (e) { }
+  // await Promise.all(fileNames.map(fileName => {
+  //   return (async() => {
+  //     if (ignoreFiles.includes(fileName)) return
+  //     if (fileName === 'index.html') {
+  //       const newPath = this.public_dir + 'Team-UTokyo(index)'
+  //       await fs.rename(this.public_dir + fileName, newPath)
+  //     } else {
+  //       const stat = await fs.stat(this.public_dir + fileName)
+  //       if (!stat.isFile()) {
+  //         console.log('folder detected: ' + fileName)
+  //         await fs.rename(`${this.public_dir}${fileName}/index.html`, `${this.public_dir}Team-UTokyo/${fileName}`)
+  //         await removeFolder(this.public_dir + fileName)
+  //       } else {
+  //         await fs.rename(this.public_dir + fileName, `${this.public_dir}Team-UTokyo/${fileName}`)
+  //       }
+  //     }
+  //   })()
+  // }))
+  // const templatePath = this.public_dir + 'Template-UTokyo/'
+  const templatePath = this.public_dir + 'template/'
   try {
     await fs.mkdir(templatePath)
   } catch (e) { }
@@ -109,33 +110,33 @@ hexo.extend.filter.register('before_exit', async function() {
       config: this.config,
       theme: this.config.theme_config
     })
-    await writeTemplate(templatePath + 'Header', header)
+    await writeTemplate(templatePath + 'Header.html', header)
     console.log('header template written')
   })(), (async () => {
     const footer = await hexo.theme.getView('_partial/footer.pug').render({
       config: this.config,
       theme: this.config.theme_config
     })
-    await writeTemplate(templatePath + 'Footer', footer)
+    await writeTemplate(templatePath + 'Footer.html', footer)
     console.log('footer template written')
   })(), (async () => {
     const head = await hexo.theme.getView('_partial/head.pug').render({
       config: this.config,
       theme: this.config.theme_config
     })
-    await writeTemplate(templatePath + 'Head', head)
+    await writeTemplate(templatePath + 'Head.html', head)
     console.log('head template written')
-  })(), (async () => {
-    const style = await hexo.render.render({
-      path: this.theme_dir + 'source/css/style.styl'
-    })
-    await writeLibTemplate(templatePath, 'CSS', style)
-    console.log('style template written')
-  })(), (async () => {
-    const script = await hexo.render.render({
-      path: this.theme_dir + 'source/js/home.js'
-    })
-    await writeLibTemplate(templatePath, 'home-js', script)
-    console.log('home-js template written')
+  // })(), (async () => {
+  //   const style = await hexo.render.render({
+  //     path: this.theme_dir + 'source/css/style.styl'
+  //   })
+  //   await writeLibTemplate(templatePath, 'CSS', style)
+  //   console.log('style template written')
+  // })(), (async () => {
+  //   const script = await hexo.render.render({
+  //     path: this.theme_dir + 'source/js/home.js'
+  //   })
+  //   await writeLibTemplate(templatePath, 'home-js', script)
+  //   console.log('home-js template written')
   })()])
 })
