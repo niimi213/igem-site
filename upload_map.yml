@@ -1,4 +1,20 @@
 assets:
+  assets\theme\img\back1.svg:
+    link_URL: https://2021.igem.org/wiki/images/3/36/T--UTokyo--theme--img--back1.svg
+    md5: 0d0c4b5684d56ceaddd153cfa226413a
+    upload_filename: T--UTokyo--theme--img--back1.svg
+  assets\theme\img\back2.svg:
+    link_URL: https://2021.igem.org/wiki/images/8/8b/T--UTokyo--theme--img--back2.svg
+    md5: 60a92b114832931961481dd5e35a43df
+    upload_filename: T--UTokyo--theme--img--back2.svg
+  assets\theme\img\icho1.svg:
+    link_URL: https://2021.igem.org/wiki/images/8/84/T--UTokyo--theme--img--icho1.svg
+    md5: 3afa64be9e7b4851325956a0a77e4a60
+    upload_filename: T--UTokyo--theme--img--icho1.svg
+  assets\theme\img\icho2.svg:
+    link_URL: https://2021.igem.org/wiki/images/4/4c/T--UTokyo--theme--img--icho2.svg
+    md5: 50f87f3ed26a65bc22fb952bba2c28d0
+    upload_filename: T--UTokyo--theme--img--icho2.svg
   assets\theme\img\kingyo.svg:
     link_URL: https://2021.igem.org/wiki/images/f/ff/T--UTokyo--theme--img--kingyo.svg
     md5: 58f685881a40e8ab23e8b7817312d3b3
@@ -10,7 +26,7 @@ assets:
 css:
   css\style.css:
     link_URL: https://2021.igem.org/Template:UTokyo/css/styleCSS?action=raw&ctype=text/css
-    md5: b40b9d73c8d7bcd2c8dd4bfec09c1c83
+    md5: 9d7cabbf3c0d1a1a20060603769f9dbd
 html:
   Model\index.html:
     link_URL: https://2021.igem.org/Team:UTokyo/Model
@@ -23,7 +39,7 @@ html:
     md5: 090fe972acc3bf8234da34b71dd706a9
   index.html:
     link_URL: https://2021.igem.org/Team:UTokyo
-    md5: d2b93d8a15b0c71e300ea7b40d998fd3
+    md5: edd776bd1a03dff2d11b9fa51663baff
   template\Footer.html:
     link_URL: https://2021.igem.org/Template:UTokyo/template/Footer
     md5: 84b2db4f4e89d008068b7720d8088102

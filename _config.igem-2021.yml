@@ -21,8 +21,10 @@ top_page:
   project_description: Synbio Adhesive Bandage to Improve care of bedsores in an aging society
   sections:
     - title: Synbio Bandage to Change the Bedsore Care
+      image: /assets/index/index-section-1.svg
       description: In Japan, the aging of population is becoming a serious problem. One of the medical conditions that should be taken care of regularly in an aging society is bedsores, which often occur in elderly people who spend a lot of time in bed. Our project proposes a new way to treat bedsores with bandages made by techniques of synthetic biology.
     - title: Cure with the Power of Yeasts
+      image: /assets/index/index-section-2.svg
       description: |
         Inside of our bio-tech bandages is filled with genetically-modified yeasts, which will provide three core functions: 
         1.  Monitering of the healing of wounds through oxygen concentration
@@ -30,5 +32,6 @@ top_page:
         3.  detection of the bacterial infection  to wounds.
         These implementations will make it possible for non-medical personnel to manage pressure ulcers.
     - title: Cellfiber Keeps Yeasts Safely
+      image: /assets/index/index-section-3.svg
       description: |
         The centerpiece of our product application is cell fiber, that is, thin, semi-permeable, hollow fibers with living cells aligned inside. While the semi-permeability makes cell fiber an ideal material of a bandage, hollow-structured fiber provides an innovative way of containing living cells. This technology has recentry invented in our university, and we pave a way to use the structure in the field of healthcare.

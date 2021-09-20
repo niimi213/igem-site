@@ -98,3 +98,11 @@ tick()
 
 const rellax = new Rellax('.rellax')
 
+// todo: change "3" to dom-influenced value
+// for (let i = 0; i < 3; i++) {
+  let i = 2
+  const wrapper = document.querySelector(`.index-section-${i + 1}`)
+  new Rellax(`.rellax-sec-${i + 1}`, {
+    wrapper
+  })
+// }
