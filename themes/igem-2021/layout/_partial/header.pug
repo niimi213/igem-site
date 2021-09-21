@@ -10,8 +10,8 @@ header#header
           -if (!theme.menu[i].submenus)
             a(href=theme.menu[i].link) #{i}
           -else
-            span(@mouseover=`openMenu('${i}')` @mouseleave="closeMenu") #{i}
-              ul.submenu(:class=`{ active:activeMenu==='${i}'}`)
+            span #{i}
+              ul.submenu
                 - for (let j in theme.menu[i].submenus)
                   li 
                     a(href=theme.menu[i].submenus[j]) #{j}
@@ -35,11 +35,5 @@ header#header
         toggleMenu() {
           this.isMenuActive = !this.isMenuActive
         },
-        openMenu(value) {
-          this.activeMenu = value;
-        },
-        closeMenu() {
-          this.activeMenu = "";
-        }
       }
     });
