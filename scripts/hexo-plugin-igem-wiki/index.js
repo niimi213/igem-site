@@ -1,6 +1,9 @@
 const fs = require('fs').promises
 const yaml = require('js-yaml')
 const rimraf = require('rimraf')
+const path = require('path')
+
+const team = 'UTokyo'
 
 function isWiki() {
   return process.argv.includes('--wiki')
@@ -29,6 +32,19 @@ hexo.extend.helper.register('isWiki', function() {
   return isWiki()
 })
 
+const original_partial = hexo.extend.helper.get('partial')
+const templates = []
+hexo.extend.helper.register('partial', function(src, config) {
+  if (config || !isWiki()) {
+    original_partial.bind(this)(src, config)
+  } else {
+    if (!templates.includes(src)) {
+      templates.push(src)
+    }
+    return `{{ Template:${team}/template/${src} }}`
+  }
+})
+
 function removeFolder(path) {
   return new Promise((resolve, reject) => {
     rimraf(path, err => {
@@ -51,10 +67,13 @@ const ignoreFiles = [
   '.gitignore'
 ]
 
-async function writeTemplate(path, content) {
+async function writeTemplate(src, content) {
+  try {
+    await fs.mkdir(path.dirname(src))
+  } catch (e) { }
   await fs.writeFile(
-    path,
-    '<!-- export --><html>' + content + '</html><!-- /export -->\n'
+    src,
+    '<html>' + content + '</html>\n'
   )
 }
 
@@ -105,38 +124,47 @@ hexo.extend.filter.register('before_exit', async function() {
   try {
     await fs.mkdir(templatePath)
   } catch (e) { }
-  await Promise.all([(async () => {
-    const header = await hexo.theme.getView('_partial/header.pug').render({
+  const promises = templates.map(src => (async () => {
+    const view = await hexo.theme.getView(src).render({
       config: this.config,
       theme: this.config.theme_config
     })
-    await writeTemplate(templatePath + 'Header.html', header)
-    console.log('header template written')
-  })(), (async () => {
-    const footer = await hexo.theme.getView('_partial/footer.pug').render({
-      config: this.config,
-      theme: this.config.theme_config
-    })
-    await writeTemplate(templatePath + 'Footer.html', footer)
-    console.log('footer template written')
-  })(), (async () => {
-    const head = await hexo.theme.getView('_partial/head.pug').render({
-      config: this.config,
-      theme: this.config.theme_config
-    })
-    await writeTemplate(templatePath + 'Head.html', head)
-    console.log('head template written')
-  // })(), (async () => {
-  //   const style = await hexo.render.render({
-  //     path: this.theme_dir + 'source/css/style.styl'
+    await writeTemplate(templatePath + src + '.html', view)
+    console.log(`written template: ${src}`)
+  })())
+  await Promise.all(promises)
+  // [(async () => {
+  //   const header = await hexo.theme.getView('_partial/header.pug').render({
+  //     config: this.config,
+  //     theme: this.config.theme_config
   //   })
-  //   await writeLibTemplate(templatePath, 'CSS', style)
-  //   console.log('style template written')
+  //   await writeTemplate(templatePath + 'Header.html', header)
+  //   console.log('header template written')
   // })(), (async () => {
-  //   const script = await hexo.render.render({
-  //     path: this.theme_dir + 'source/js/home.js'
+  //   const footer = await hexo.theme.getView('_partial/footer.pug').render({
+  //     config: this.config,
+  //     theme: this.config.theme_config
   //   })
-  //   await writeLibTemplate(templatePath, 'home-js', script)
-  //   console.log('home-js template written')
-  })()])
+  //   await writeTemplate(templatePath + 'Footer.html', footer)
+  //   console.log('footer template written')
+  // })(), (async () => {
+  //   const head = await hexo.theme.getView('_partial/head.pug').render({
+  //     config: this.config,
+  //     theme: this.config.theme_config
+  //   })
+  //   await writeTemplate(templatePath + 'Head.html', head)
+  //   console.log('head template written')
+  // // })(), (async () => {
+  // //   const style = await hexo.render.render({
+  // //     path: this.theme_dir + 'source/css/style.styl'
+  // //   })
+  // //   await writeLibTemplate(templatePath, 'CSS', style)
+  // //   console.log('style template written')
+  // // })(), (async () => {
+  // //   const script = await hexo.render.render({
+  // //     path: this.theme_dir + 'source/js/home.js'
+  // //   })
+  // //   await writeLibTemplate(templatePath, 'home-js', script)
+  // //   console.log('home-js template written')
+  // })()])
 })

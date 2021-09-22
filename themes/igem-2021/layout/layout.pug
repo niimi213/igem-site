@@ -1,11 +1,11 @@
 if isWiki()
-  | {{Template:UTokyo/template/Head}}
-  | {{Template:UTokyo/template/Header}}
+  != partial('_partial/head')
+  != partial('_partial/header')
   | <!--{{CURRENTTIME}}-->
   html
     main
       != body
-  | {{Template:UTokyo/template/Footer}}
+  != partial('_partial/footer')
 else
   //- iGEMのサイトを再現
   doctype html
