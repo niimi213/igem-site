@@ -35,7 +35,4 @@ section#index-main-section.index-section.rellax(data-rellax-speed="-5")
       h2 #{sec.title}
       = sec.description
 script(src="/js/rellax.min.js")
-if isWiki()
-  script(src="/js/home.js")
-else
-  != js('js/home')
+!= js('js/home')
