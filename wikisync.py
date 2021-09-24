@@ -4,7 +4,7 @@ import os
 import sys
 from hashlib import md5
 
-def upload_html(html_files):
+def upload_html(html_files, browser, config, upload_map):
   for path in html_files.keys():
     file_object = html_files[path]
     path_str = str(file_object.path)
@@ -12,16 +12,22 @@ def upload_html(html_files):
 
     # open file
     try:
-        with open(file_object.src_path, 'r') as file:
+        with open(file_object.src_path, 'r', encoding='utf-8') as file:
             contents = file.read()
     except Exception:
         message = f'Could not open/read {file_object.path}. Skipping.'
+        print(message)
         # logger.error(message)
         continue  # FIXME Can this be improved?
 
+    preprocess = '' + contents + ''
+    preprocess = preprocess.replace('&#123;', '<!-- ugly point -->{<!-- /ugly point -->')
+    preprocess = preprocess.replace('&#125;', '<!-- ugly point -->}<!-- /ugly point -->')
     # parse and modify contents
     processed = sync.HTMLparser(
-        config, file_object.path, '' + contents + '', upload_map)
+        config, file_object.path, preprocess, upload_map)
+    processed = processed.replace('<!-- ugly point -->{<!-- /ugly point -->', '&#123;')
+    processed = processed.replace('<!-- ugly point -->}<!-- /ugly point -->', '&#125;')
     processed = processed.replace('{{', '</html>{{').replace('}}', '}}<html>')
 
     # calculate and store md5 hash of the modified contents
@@ -29,6 +35,7 @@ def upload_html(html_files):
 
     if upload_map[ext][path_str]['md5'] == build_hash:
         message = f'Contents of {file_object.path} have been uploaded previously. Skipping.'
+        print(message)
         logger.info(message)
     else:
         upload_map[ext][path_str]['md5'] = build_hash
@@ -42,6 +49,7 @@ def upload_html(html_files):
                 file.write(processed)
         except Exception:
             message = f"Couldn not write {str(file_object.build_path)}. Skipping."
+            print(message)
             logger.error(message)
             continue
             # FIXME Can this be improved?
@@ -50,6 +58,7 @@ def upload_html(html_files):
         successful = sync.iGEM_upload_page(browser, processed, file_object.upload_URL)
         if not successful:
             message = f'Could not upload {str(file_object.path)}. Skipping.'
+            print(message)
             logger.error(message)
             continue
             # FIXME Can this be improved?
@@ -119,9 +128,7 @@ uploaded_code = sync.build_and_upload({
   'js': files['js']
 }, browser, config, upload_map)
 
-uploaded_code_html = upload_html(files['html'])
-
-
+uploaded_code_html = upload_html(files['html'], browser, config, upload_map)
 
 # * 12. Write final upload map
 sync.write_upload_map(upload_map)
