@@ -96,29 +96,34 @@ body
     .menu
       position relative
       margin 0px
-      height 100%
+      height header-height
+      text-align center
       a, span   
-        padding 0px 15px
+        padding 16px 15px
         margin 0px
         display block
+        box-sizing border-box
+        height 100%
         position relative
-        line-height header-height
-        background rgba(255, 255, 255, 0.8)
         transition all 0.4s 0s ease
       a:hover,span:hover
         background-color #ffc9d7
       span:hover .submenu li
-            height header-height
-            overflow visible
+        height header-height
+        overflow visible
     .submenu
       position absolute
       left 0px
+      top header-height
       li
         transition .6s
         height 0
         display list-item
         margin-bottom 0px
         overflow hidden
+        a 
+          background-color rgba(255,255,255,1.0)
+          height auto
   nav.header-nav-mobile
     display none
     margin-right 12.5%
