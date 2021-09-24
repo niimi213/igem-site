@@ -29,15 +29,24 @@ body
     margin 1em 0
     overflow visible
   a
-    color black
+    color #1e88a8
+    text-decoration underline
     &:hover
-      text-decoration none
+      text-decoration underline
     &:focus
-      text-decoration none
+      text-decoration underline
   p
     font-family inherit
     font-size inherit
     margin 1em 0
+    line-height 32px
+  code
+    color #5D5FEF
+    font-family 'Roboto Mono'
+    border none
+    background-color #E5E5E5
+    border-radius 3px
+    font-size 16px
   #toc, .toc
     border none
     background-color inherit
@@ -324,7 +333,7 @@ footer
   margin 90px 12.5vw
   display block
   vertical-align top
-  font-family Lato
+  font-family Roboto //Lato
   font-size 18px
   font-weight 300
   line-height 30px
@@ -337,7 +346,7 @@ footer
     width 280px
     position absolute
     margin-right 40px
-    background-color gray
+    margin-top 20px
     .toc-number
       display none
     ol
@@ -388,4 +397,3 @@ footer
     margin-top 10px
     font-size 12px
     line-height 24px
-
