@@ -21,11 +21,11 @@ menu:
       Modeling: /Modeling/
       Hardware: /Hardware/
   Human Practice: 
-    link: /Human-Practice/
+    link: /Human_Practice/
     submenus:
-      Human Practice: /Human Practice/
+      Integrated Human Practice: /Human_Practice/
       Implementation: /Implementation/
-      Education Communication: /Education-Communication/
+      Education Communication: /Education/
   Team: 
     link: /Team/
     submenus: 
