@@ -18,7 +18,7 @@ menu:
   Dry Lab: 
     link: /Dry-Lab/
     submenus:
-      Modeling: /Modeling/
+      Model: /Model/
       Hardware: /Hardware/
   Human Practice: 
     link: /Human_Practice/

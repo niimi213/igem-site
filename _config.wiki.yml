@@ -21,7 +21,7 @@ theme_config:
     Dry Lab: 
       link: /Team:UTokyo/Dry-Lab/
       submenus:
-        Modeling: /Team:UTokyo/Modeling/
+        Model: /Team:UTokyo/Model/
         Hardware: /Team:UTokyo/Hardware/
     Human Practice: 
       link: /Team:UTokyo/Human_Practice/
