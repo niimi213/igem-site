@@ -20,7 +20,7 @@ header#header
     span(:class="{ active: !isMenuActive }")
       i.fas.fa-bars
     span(:class="{ active: isMenuActive }")
-      i.fas.fa-chevron-up
+      i.fas.fa-chevron-up   
   div.header-menu(:class="{ 'header-menu-active': isMenuActive }")
     - for (let i in theme.menu)
       a(href=theme.menu[i].link) #{i}  

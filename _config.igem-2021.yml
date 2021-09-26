@@ -2,17 +2,36 @@ menu:
   # 最後の/はWikiでは消さなければいけない、また最初も/じゃなくて./にする
   Project:
     link: /Project/
-    submenus: 
-      Attributions: /Attributions/
-      Collaborations: /Collaborations/    
-  Model: 
-    link: /Model/ 
-  Human Practices: 
-    link: /Human-Practices/
-  Parts: 
-    link: /Parts/
+    submenus:
+      Description: /Description/
+      Contribution: /Contribution/
+      Engineering: /Engineering/
+      Safty: /Safty/
+      Notebook: /Notebook/
+      Excellence in another area: /Excellence-in-another-area/
+  Wet Lab: 
+    link: /Wet-Lab/ 
+    submenus:
+      Results: /Results/
+      Experiments: /Experiments/
+      Parts: /Parts/
+  Dry Lab: 
+    link: /Dry-Lab/
+    submenus:
+      Model: /Model/
+      Hardware: /Hardware/
+  Human Practice: 
+    link: /Human_Practice/
+    submenus:
+      Integrated Human Practice: /Human_Practice/
+      Implementation: /Implementation/
+      Education Communication: /Education/
   Team: 
     link: /Team/
+    submenus: 
+      Attributions: /Attributions/
+      Collaborations: /Collaborations/
+      Partnership: /Partnership/
   Medal: 
     link : /Medal/
 

@@ -2,19 +2,38 @@
 # permalink: :title
 # theme_config:
 #   menu:
-#     # 最後の/はWikiでは消さなければいけない、また最初も/じゃなくて./にする
-#     Project: 
-#       link: /Team:UTokyo/Project
+#   # 最後の/はWikiでは消さなければいけない、また最初も/じゃなくて./にする
+#     Project:
+#       link: /Team:UTokyo/Project/
 #       submenus:
+#         Description: /Team:UTokyo/Description/
+#         Contribution: /Team:UTokyo/Contribution/
+#         Engineering: /Team:UTokyo/Engineering/
+#         Safty: /Team:UTokyo/Safty/
+#         Notebook: /Team:UTokyo/Notebook/
+#         Excellence in another area: /Team:UTokyo/Excellence-in-another-area/
+#     Wet Lab: 
+#       link: /Team:UTokyo/Wet-Lab/ 
+#       submenus:
+#         Results: /Team:UTokyo/Results/
+#         Experiments: /Team:UTokyo/Experiments/
+#         Parts: /Team:UTokyo/Parts/
+#     Dry Lab: 
+#       link: /Team:UTokyo/Dry-Lab/
+#       submenus:
+#         Model: /Team:UTokyo/Model/
+#         Hardware: /Team:UTokyo/Hardware/
+#     Human Practice: 
+#       link: /Team:UTokyo/Human_Practice/
+#       submenus:
+#         Integrated Human Practice: /Team:UTokyo/Human_Practice/
+#         Implementation: /Team:UTokyo/Implementation/
+#         Education Communication: /Team:UTokyo/Education/
+#     Team: 
+#       link: /Team:UTokyo/Team/
+#       submenus: 
 #         Attributions: /Team:UTokyo/Attributions/
 #         Collaborations: /Team:UTokyo/Collaborations/
-#     Model: 
-#       link: /Team:UTokyo/Model
-#     Human Practices: 
-#       link: /Team:UTokyo/Human-Practices
-#     Parts: 
-#       link: /Team:UTokyo/Parts
-#     Team: 
-#       link: /Team:UTokyo/Team
+#         Partnership: /Team:UTokyo/Partnership/
 #     Medal: 
-#       link: /Team:UTokyo/Medal
+#       link : /Team:UTokyo/Medal/
