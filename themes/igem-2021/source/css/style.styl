@@ -29,15 +29,24 @@ body
     margin 1em 0
     overflow visible
   a
-    color black
+    color #1e88a8
+    text-decoration underline
     &:hover
-      text-decoration none
+      text-decoration underline
     &:focus
-      text-decoration none
+      text-decoration underline
   p
     font-family inherit
     font-size inherit
     margin 1em 0
+    line-height 32px
+  code
+    color #5D5FEF
+    font-family 'Roboto Mono'
+    border none
+    background-color #E5E5E5
+    border-radius 3px
+    font-size 16px
   #toc, .toc
     border none
     background-color inherit
@@ -179,6 +188,14 @@ index-main-section-height = 650px
   height index-main-section-height
   text-align center
   display flex // なんか文字をsvgの前に表示するのに必要。謎
+  .index-back-img
+    position absolute
+    height auto
+    z-index -1
+  .index-fore-img
+    position absolute
+    display flex
+    height auto
 
   #index-main-section-content
     width 100%
@@ -218,6 +235,8 @@ index-main-section-height = 650px
 index-normal-section-height = 600px
 .index-section
   position relative
+  background-image url('https://2021.igem.org/wiki/images/thumb/f/f1/T--UTokyo--washi.png/800px-T--UTokyo--washi.png')
+  background-size cover
   svg.index-back
     position absolute
     top 0
@@ -232,22 +251,26 @@ index-normal-section-height = 600px
   flex-direction row
   padding 60px 12.5vw
   box-sizing border-box
+  overflow hidden
 
-  .image-temp
+  .index-sec-image
     flex 1
-    background-color #F3F3F3
+  .index-sec-image-3
+    height index-normal-section-height + 200px
+    transform translateY(-500px)
 
   .index-sec-content
     flex 1
     font-size 18px
+    line-height 30px
     z-index 1
 
 .index-section-odd
-  background-color #FFFFF7
+  background-color #F2FFFF
+  flex-direction row-reverse
 
 .index-section-even
-  background-color #D3F1FB
-  flex-direction row-reverse
+  background-color #FFFFF7
 
 .index-sec-separator
   width 120px
@@ -269,8 +292,9 @@ index-normal-section-height = 600px
 #bodyContent h2
   font-family Roboto
   font-style normal
-  font-weight 500
+  font-weight 600
   font-size 36px
+  line-height 42px
 
 #bodyContent h3
   font-family Roboto
@@ -321,7 +345,7 @@ footer
   margin 90px 12.5vw
   display block
   vertical-align top
-  font-family Lato
+  font-family Roboto //Lato
   font-size 18px
   font-weight 300
   line-height 30px
@@ -334,7 +358,7 @@ footer
     width 280px
     position absolute
     margin-right 40px
-    background-color gray
+    margin-top 20px
     .toc-number
       display none
     ol

@@ -1,0 +1,86 @@
+assets:
+  assets\software\hexo-for-igem-1.png:
+    link_URL: https://2021.igem.org/wiki/images/f/f6/T--UTokyo--software--hexo-for-igem-1.png
+    md5: d33e6eec619a8d251cfec871f7207c0b
+    upload_filename: T--UTokyo--software--hexo-for-igem-1.png
+  assets\theme\img\back1.svg:
+    link_URL: https://2021.igem.org/wiki/images/3/36/T--UTokyo--theme--img--back1.svg
+    md5: 0d0c4b5684d56ceaddd153cfa226413a
+    upload_filename: T--UTokyo--theme--img--back1.svg
+  assets\theme\img\back2.svg:
+    link_URL: https://2021.igem.org/wiki/images/8/8b/T--UTokyo--theme--img--back2.svg
+    md5: 60a92b114832931961481dd5e35a43df
+    upload_filename: T--UTokyo--theme--img--back2.svg
+  assets\theme\img\icho1.svg:
+    link_URL: https://2021.igem.org/wiki/images/8/84/T--UTokyo--theme--img--icho1.svg
+    md5: 3afa64be9e7b4851325956a0a77e4a60
+    upload_filename: T--UTokyo--theme--img--icho1.svg
+  assets\theme\img\icho2.svg:
+    link_URL: https://2021.igem.org/wiki/images/4/4c/T--UTokyo--theme--img--icho2.svg
+    md5: 50f87f3ed26a65bc22fb952bba2c28d0
+    upload_filename: T--UTokyo--theme--img--icho2.svg
+  assets\theme\img\index-section-1.svg:
+    link_URL: https://2021.igem.org/wiki/images/3/30/T--UTokyo--theme--img--index-section-1.svg
+    md5: fa8c4ca644cfe9d47109f168e626b3ef
+    upload_filename: T--UTokyo--theme--img--index-section-1.svg
+  assets\theme\img\index-section-2.svg:
+    link_URL: https://2021.igem.org/wiki/images/6/68/T--UTokyo--theme--img--index-section-2.svg
+    md5: ac1f4840e00ada5a33f2c937e47cbaaa
+    upload_filename: T--UTokyo--theme--img--index-section-2.svg
+  assets\theme\img\index-section-3.svg:
+    link_URL: https://2021.igem.org/wiki/images/2/24/T--UTokyo--theme--img--index-section-3.svg
+    md5: 4da6d8b1d8ce66ec9fc787a341c4275f
+    upload_filename: T--UTokyo--theme--img--index-section-3.svg
+  assets\theme\img\kingyo.svg:
+    link_URL: https://2021.igem.org/wiki/images/f/ff/T--UTokyo--theme--img--kingyo.svg
+    md5: 58f685881a40e8ab23e8b7817312d3b3
+    upload_filename: T--UTokyo--theme--img--kingyo.svg
+  assets\theme\img\logo.svg:
+    link_URL: https://2021.igem.org/wiki/images/b/b8/T--UTokyo--theme--img--logo.svg
+    md5: c4390664185897b641ac42f2df7b7231
+    upload_filename: T--UTokyo--theme--img--logo.svg
+css:
+  css\style.css:
+    link_URL: https://2021.igem.org/Template:UTokyo/css/styleCSS?action=raw&ctype=text/css
+    md5: 6e81830857387746b716da7afc872352
+html:
+  Model\index.html:
+    link_URL: https://2021.igem.org/Team:UTokyo/Model
+    md5: e0a51b25997122f3ca2e2682b7c2e6a8
+  Software\index.html:
+    link_URL: https://2021.igem.org/Team:UTokyo/Software
+    md5: 635673c2668f060f97d070d8b6e9f600
+  Team\index.html:
+    link_URL: https://2021.igem.org/Team:UTokyo/Team
+    md5: 6f63e8b0757c6597cba5ec94af87b8f5
+  index.html:
+    link_URL: https://2021.igem.org/Team:UTokyo
+    md5: e8a6dc77c72c3ea12c691757c5cbdd1d
+  template\Footer.html:
+    link_URL: https://2021.igem.org/Template:UTokyo/template/Footer
+    md5: 84b2db4f4e89d008068b7720d8088102
+  template\Head.html:
+    link_URL: https://2021.igem.org/Template:UTokyo/template/Head
+    md5: 887b36cad44c99d54884ffc2043b3abd
+  template\Header.html:
+    link_URL: https://2021.igem.org/Template:UTokyo/template/Header
+    md5: 28b82092714c65a13b94d3e06a21e90f
+  template\_partial\footer.html:
+    link_URL: https://2021.igem.org/Template:UTokyo/template/_partial/footer
+    md5: bb13c4cfd1c9d3ae3e4ffd35fa0a7f2c
+  template\_partial\head.html:
+    link_URL: https://2021.igem.org/Template:UTokyo/template/_partial/head
+    md5: 38b9fe6a980eebb56881f75d008280a6
+  template\_partial\header.html:
+    link_URL: https://2021.igem.org/Template:UTokyo/template/_partial/header
+    md5: 97ed0b10763886bd8f98b1dcad7f183b
+js:
+  js\home.js:
+    link_URL: https://2021.igem.org/Template:UTokyo/js/homeJS?action=raw&ctype=text/javascript
+    md5: 3588b5354ff2295cf9f5fdb27123750b
+  js\load-php.js:
+    link_URL: https://2021.igem.org/Template:UTokyo/js/load-phpJS?action=raw&ctype=text/javascript
+    md5: 7832608c010ddfc5c250a114b642ad74
+  js\rellax.min.js:
+    link_URL: https://2021.igem.org/Template:UTokyo/js/rellax-minJS?action=raw&ctype=text/javascript
+    md5: c603c319df84051e92f76affd0926d34

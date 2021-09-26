@@ -1,5 +1,9 @@
-section#index-main-section.index-section
-  svg.index-back#index-back-0(viewBox="0 0 1440 702" xmlns="http://www.w3.org/2000/svg" fill="rgba(174, 229, 248, 0.5)" preserveAspectRatio="none")
+section#index-main-section.index-section.rellax(data-rellax-speed="-5")
+  svg.index-back#index-back-0(viewBox="0 0 1440 702" xmlns="http://www.w3.org/2000/svg" fill="#1E88A888" preserveAspectRatio="none")
+  img.index-fore-img.rellax(src="/assets/theme/img/icho1.svg" data-rellax-speed="1" style="top: 28vw; left: 74vw; width: 11.5vw")
+  img.index-fore-img.rellax(src="/assets/theme/img/icho2.svg" data-rellax-speed="1.5" style="top: 30vw; left: 84vw; width: 14vw")
+  img.index-back-img.rellax(src="/assets/theme/img/back1.svg" data-rellax-speed="-1.5" style="top: 0; left: 0; width: 100vw")
+  img.index-back-img.rellax(src="/assets/theme/img/back2.svg" data-rellax-speed="-1" style="top: 8vw; left: 0; width: 100vw")
   #index-main-section-content
     h1 #{theme.top_page.project_name}
     h3 #{theme.top_page.project_description}
@@ -8,20 +12,27 @@ section#index-main-section.index-section
       i.fas.fa-angle-right
 - for (let [i, sec] of theme.top_page.sections.entries())
   section(
-    class=`index-section index-normal-section index-section-${i % 2 === 0 ? 'even' : 'odd'}`
+    class=`index-section index-normal-section index-section-${i % 2 === 0 ? 'even' : 'odd'} index-section-${i + 1}`
   )
+    //- if (i === 0 || i === 1) {
+    //- }
     case i
       when 0
-        svg.index-back#index-back-1(viewBox="0 702 1440 600" xmlns="http://www.w3.org/2000/svg" fill="rgba(255, 255, 245, 0.5)" preserveAspectRatio="none")
-        img#kingyo(src="https://2021.igem.org/wiki/images/3/3e/T--UTokyo--kingyo.svg" width="106" height="142")
+        img.index-sec-image(src=`/assets/theme/img/index-section-${i + 1}.svg` class=`index-sec-image-${i}`)
+        //- svg.index-back#index-back-1(viewBox="0 702 1440 600" xmlns="http://www.w3.org/2000/svg" fill="rgba(255, 255, 245, 0.5)" preserveAspectRatio="none")
+        //- img#kingyo(src="/assets/theme/img/kingyo.svg" width="106" height="142")
       when 1
-        svg.index-back#index-back-2(viewBox="0 1302 1440 600" xmlns="http://www.w3.org/2000/svg" fill="rgba(174, 229, 248, 0.5)" preserveAspectRatio="none")
-    .image-temp
+        img.index-sec-image(src=`/assets/theme/img/index-section-${i + 1}.svg` class=`index-sec-image-${i}`)
+        //- svg.index-back#index-back-2(viewBox="0 1302 1440 600" xmlns="http://www.w3.org/2000/svg" fill="rgba(174, 229, 248, 0.5)" preserveAspectRatio="none")
+      when 2
+        img.index-sec-image.rellax(
+          src=`/assets/theme/img/index-section-${i + 1}.svg`
+          class=`index-sec-image-${i + 1}`
+          data-rellax-speed="2"
+          data-rellax-percentage="-0.1")
     .index-sec-separator
     .index-sec-content
       h2 #{sec.title}
       = sec.description
-if isWiki()
-  script(src="https://2021.igem.org/Template:UTokyo/lib/home-js?action=raw&ctype=text/javascript")
-else
-  != js('js/home')
+script(src="/js/rellax.min.js")
+!= js('js/home')
