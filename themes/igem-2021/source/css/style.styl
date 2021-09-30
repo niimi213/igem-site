@@ -230,7 +230,20 @@ index-main-section-height = 650px
         color black
         text-decoration none
   svg.index-back
+    width 956px
     height index-main-section-height + header-height
+  #index-back-0-left
+    position absolute
+    left 0
+  #index-back-0-right
+    position absolute
+    left inherit
+    right 0
+  @media (max-width 1100px)
+    #index-back-0-left
+      width 100vw
+    #index-back-0-right
+      width 100vw
 
 index-normal-section-height = 600px
 .index-section
