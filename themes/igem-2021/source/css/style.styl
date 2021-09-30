@@ -115,6 +115,7 @@ body
         line-height header-height
         position relative
         transition all 0.4s 0s ease
+        text-decoration none
       a:hover,span:hover
         background-color #ffc9d7
       span:hover .submenu li
@@ -164,12 +165,14 @@ body
     background-color rgba(255,255,255,0.8)
     font-family Roboto
     max-height 0
-    overflow hidden
+    overflow scroll
     transition max-height .5s ease 0s
     @media (max-width 767px)
       &.header-menu-active
         max-height 50vh
-    a
+    li
+      list-style none
+    a,span
       display block
       height 44px
       line-height 24px
@@ -177,9 +180,27 @@ body
       padding 10px
       box-sizing border-box
       border-top 1px solid #C4C4C4
+      transition all 0.4s 0s ease
       &:first-child
         border none
-
+    .sub
+      li
+        transition all 0.4s 0s ease
+        position relative
+        display list-style
+        margin-bottom 0px
+        overflow hidden
+        height 0
+        a
+          height auto
+          line-height 0
+    .sub.active
+      li
+        height 50px
+        a
+          line-height 1.5
+          padding-top 15px
+          padding-bottom 15px
 
 index-main-section-height = 650px
 #index-main-section

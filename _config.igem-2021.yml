@@ -8,7 +8,7 @@ menu:
       Engineering: /Engineering/
       Safty: /Safty/
       Notebook: /Notebook/
-      Excellence in another area: /Excellence-in-another-area/
+      Excellence in another area: /Excellence_Area/
   Wet Lab: 
     link: /Wet-Lab/ 
     submenus:
@@ -23,7 +23,7 @@ menu:
   Human Practice: 
     link: /Human_Practice/
     submenus:
-      Integrated Human Practice: /Human_Practice/
+      Integrated Human Practice: /Human_Practices/
       Implementation: /Implementation/
       Education Communication: /Education/
   Team: 
