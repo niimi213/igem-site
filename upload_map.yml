@@ -42,17 +42,17 @@ assets:
 css:
   css\style.css:
     link_URL: https://2021.igem.org/Template:UTokyo/css/styleCSS?action=raw&ctype=text/css
-    md5: 6e81830857387746b716da7afc872352
+    md5: 770048dc24f90c8f050b96f564135009
 html:
   Model\index.html:
     link_URL: https://2021.igem.org/Team:UTokyo/Model
-    md5: e0a51b25997122f3ca2e2682b7c2e6a8
+    md5: 8fbca7e52472604a7f7064adf0a01293
   Software\index.html:
     link_URL: https://2021.igem.org/Team:UTokyo/Software
-    md5: 635673c2668f060f97d070d8b6e9f600
+    md5: 988df375450754cb5ce8e2cc0dbbf7ce
   Team\index.html:
     link_URL: https://2021.igem.org/Team:UTokyo/Team
-    md5: 6f63e8b0757c6597cba5ec94af87b8f5
+    md5: 30db22225adf62d6e0cb3f1fcbce36d3
   index.html:
     link_URL: https://2021.igem.org/Team:UTokyo
     md5: e8a6dc77c72c3ea12c691757c5cbdd1d
@@ -73,7 +73,7 @@ html:
     md5: 38b9fe6a980eebb56881f75d008280a6
   template\_partial\header.html:
     link_URL: https://2021.igem.org/Template:UTokyo/template/_partial/header
-    md5: 97ed0b10763886bd8f98b1dcad7f183b
+    md5: abdfa41f2ea2498601cd286a3526489d
 js:
   js\home.js:
     link_URL: https://2021.igem.org/Template:UTokyo/js/homeJS?action=raw&ctype=text/javascript
@@ -84,3 +84,6 @@ js:
   js\rellax.min.js:
     link_URL: https://2021.igem.org/Template:UTokyo/js/rellax-minJS?action=raw&ctype=text/javascript
     md5: c603c319df84051e92f76affd0926d34
+  js\submenu.js:
+    link_URL: https://2021.igem.org/Template:UTokyo/js/submenuJS?action=raw&ctype=text/javascript
+    md5: ''
