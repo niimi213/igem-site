@@ -79,3 +79,4 @@ Vue.component('gallery-item', {
 new Vue({ el: '#team-gallery' })
 </script>
 
+Sample images from "LFW - People (Face Recognition)"
