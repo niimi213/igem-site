@@ -7,9 +7,9 @@ header#header
   nav.header-nav-pc
       - for (let i in theme.menu)
         li.menu
-          -if (!theme.menu[i].submenus)
+          - if (!theme.menu[i].submenus)
             a(href=theme.menu[i].link) #{i}
-          -else
+          - else
             span #{i}
               ul.submenu
                 - for (let j in theme.menu[i].submenus)
@@ -23,17 +23,29 @@ header#header
       i.fas.fa-chevron-up   
   div.header-menu(:class="{ 'header-menu-active': isMenuActive }")
     - for (let i in theme.menu)
-      a(href=theme.menu[i].link) #{i}  
+      li
+        - if (!theme.menu[i].submenus)
+          a(href=theme.menu[i].link) #{i}
+        - else
+          span(:class=`{ active: activeMenu=== '${i}' }` @click=`toggleSub('${i}')`) #{i}
+            ul.sub(:class=`{ active: activeMenu=== '${i}' }`)
+              - for (let j in theme.menu[i].submenus)
+                li
+                  a(href=theme.menu[i].submenus[j]) #{j}
+
   script.
     const headerApp = new Vue({
       el: '#header',
       data: {
           isMenuActive: false,
-          activeMenu:""
+          activeMenu:''
       },
       methods: {
         toggleMenu() {
           this.isMenuActive = !this.isMenuActive
         },
+        toggleSub(value) {
+          this.activeMenu = this.activeMenu===value ? '':value;
+        }
       }
     });
