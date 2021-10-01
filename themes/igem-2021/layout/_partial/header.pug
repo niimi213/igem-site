@@ -27,7 +27,7 @@ header#header
         - if (!theme.menu[i].submenus)
           a(href=theme.menu[i].link) #{i}
         - else
-          span(:class=`{ active: activeMenu=== '${i}' }` @click=`openSub('${i}')`) #{i}
+          span(:class=`{ active: activeMenu=== '${i}' }` @click=`toggleSub('${i}')`) #{i}
             ul.sub(:class=`{ active: activeMenu=== '${i}' }`)
               - for (let j in theme.menu[i].submenus)
                 li
@@ -38,14 +38,14 @@ header#header
       el: '#header',
       data: {
           isMenuActive: false,
-          activeMenu:""
+          activeMenu:''
       },
       methods: {
         toggleMenu() {
           this.isMenuActive = !this.isMenuActive
         },
-        openSub(value) {
-          this.activeMenu = this.activeMenu===value ? "":value;
+        toggleSub(value) {
+          this.activeMenu = this.activeMenu===value ? '':value;
         }
       }
     });
