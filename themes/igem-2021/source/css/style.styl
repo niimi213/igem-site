@@ -134,8 +134,8 @@ body
         display list-item
         margin-bottom 0px
         overflow hidden
+        background-color rgba(255,255,255,0.8)
         a
-          background-color rgba(255,255,255,1.0)
           line-height 0
           height auto
           opacity 0
@@ -175,14 +175,17 @@ body
       border-top 1px solid #C4C4C4
     a,span
       display block
-      height 44px
+      max-height 44px
       line-height 24px
-      margin 0 40px
+      margin 0 
       padding 10px
+      padding-left 40px
       box-sizing border-box
       transition all 0.4s 0s ease
       &:first-child
         border none
+    span.active
+      max-height 1000px
     .sub
       li
         transition all 0.4s 0s ease
@@ -190,9 +193,11 @@ body
         display list-style
         overflow hidden
         height 0
-        //border-top 0px
         opacity 0
         a
+          position absolute
+          margin 0
+          top 0px
           height 0
           line-height 0
     .sub.active
@@ -201,8 +206,6 @@ body
         opacity 1
         a
           line-height 1.5
-          padding-top 15px
-          padding-bottom 15px
 
 index-main-section-height = 650px
 #index-main-section

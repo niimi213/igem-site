@@ -27,11 +27,11 @@ header#header
         - if (!theme.menu[i].submenus)
           a(href=theme.menu[i].link) #{i}
         - else
-          span(@click=`openSub('${i}')`) #{i}
-          ul.sub(:class=`{ active: activeMenu=== '${i}' }`)
-            - for (let j in theme.menu[i].submenus)
-              li
-                a(href=theme.menu[i].submenus[j]) #{j}
+          span(:class=`{ active: activeMenu=== '${i}' }` @click=`openSub('${i}')`) #{i}
+            ul.sub(:class=`{ active: activeMenu=== '${i}' }`)
+              - for (let j in theme.menu[i].submenus)
+                li
+                  a(href=theme.menu[i].submenus[j]) #{j}
 
   script.
     const headerApp = new Vue({
