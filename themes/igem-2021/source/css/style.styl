@@ -1,6 +1,8 @@
 header-height = 52px
 igem-menu-height = 18px
 eyecatch-height = 320px
+mobile-max-width = 767px
+
 @font-face
   font-family FontAwesome
   font-style normal
@@ -66,7 +68,7 @@ body
   display flex
   flex-direction row
   align-items center
-  @media (max-width 767px)
+  @media (max-width mobile-max-width)
     justify-content center
 
   a
@@ -82,7 +84,7 @@ body
     font-weight 500
     font-size 18px
     line-height header-height
-    @media (max-width 767px)
+    @media (max-width mobile-max-width)
       margin 0
 
 
@@ -94,7 +96,7 @@ body
     margin-right 12.5%
     font-family Roboto
     height 100%
-    @media (max-width 767px)
+    @media (max-width mobile-max-width)
       display none
     a
       margin-left 50px
@@ -147,7 +149,7 @@ body
     top 0
     right 0
     height header-height
-    @media (max-width 767px)
+    @media (max-width mobile-max-width)
       display flex
     svg
       cursor pointer
@@ -166,7 +168,7 @@ body
     max-height 0
     overflow hidden
     transition max-height .5s ease 0s
-    @media (max-width 767px)
+    @media (max-width mobile-max-width)
       &.header-menu-active
         max-height 50vh
     a
@@ -229,8 +231,9 @@ index-main-section-height = 650px
       :hover
         color black
         text-decoration none
+  index-back-width = 1000px
   svg.index-back
-    width 956px
+    width index-back-width
     height index-main-section-height + header-height
   #index-back-0-left
     position absolute
@@ -239,7 +242,7 @@ index-main-section-height = 650px
     position absolute
     left inherit
     right 0
-  @media (max-width 1100px)
+  @media (max-width index-back-width)
     #index-back-0-left
       width 100vw
     #index-back-0-right
@@ -266,6 +269,9 @@ index-normal-section-height = 600px
   box-sizing border-box
   overflow hidden
 
+  @media (max-width mobile-max-width)
+    display block
+
   .index-sec-image
     flex 1
   .index-sec-image-3
@@ -287,6 +293,8 @@ index-normal-section-height = 600px
 
 .index-sec-separator
   width 120px
+  @media (max-width mobile-max-width)
+    display none
 
 #kingyo
   position absolute
