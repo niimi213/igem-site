@@ -172,6 +172,7 @@ body
         max-height 50vh
     li
       list-style none
+      border-top 1px solid #C4C4C4
     a,span
       display block
       height 44px
@@ -179,7 +180,6 @@ body
       margin 0 40px
       padding 10px
       box-sizing border-box
-      border-top 1px solid #C4C4C4
       transition all 0.4s 0s ease
       &:first-child
         border none
@@ -188,15 +188,17 @@ body
         transition all 0.4s 0s ease
         position relative
         display list-style
-        margin-bottom 0px
         overflow hidden
         height 0
+        //border-top 0px
+        opacity 0
         a
-          height auto
+          height 0
           line-height 0
     .sub.active
       li
         height 50px
+        opacity 1
         a
           line-height 1.5
           padding-top 15px
