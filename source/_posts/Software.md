@@ -2,6 +2,7 @@
 title: Software
 date: 2021-09-06 11:34:24
 tags:
+eyecatch: 
 ---
 
 We have developed our original deployment system for iGEM Wiki, called **Hexo for iGEM**.

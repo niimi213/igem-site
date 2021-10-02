@@ -2,6 +2,7 @@
 title: Model
 date: 2021-08-19 10:08:16
 tags:
+eyecatch:
 ---
 
 ## Oxygen Sensing

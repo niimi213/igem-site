@@ -29,6 +29,7 @@ menu:
   Team: 
     link: /Team/
     submenus: 
+      Team: /Team/
       Attributions: /Attributions/
       Collaborations: /Collaborations/
       Partnership: /Partnership/
