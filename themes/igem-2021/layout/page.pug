@@ -1,4 +1,5 @@
 .contents-wrapper
-  div.eyecatch(style={'background-image':`url(${page.eyecatch})`})
+  if (page.eyecatch)
+    div.eyecatch(style={'background-image': `url(${page.eyecatch})`})
   article.page
     != partial('_partial/article', { post: page })
