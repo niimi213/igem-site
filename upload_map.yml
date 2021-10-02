@@ -154,7 +154,7 @@ assets:
 css:
   css/style.css:
     link_URL: https://2021.igem.org/Template:UTokyo/css/styleCSS?action=raw&ctype=text/css
-    md5: 87cf26a1670dbdc7985c15c6a2b21cc3
+    md5: 5907cd038322bb61b758f16f144e8450
   css\style.css:
     link_URL: https://2021.igem.org/Template:UTokyo/css/styleCSS?action=raw&ctype=text/css
     md5: a89bea9c85520a29585803beb00b2ae3
@@ -173,7 +173,7 @@ html:
     md5: 988df375450754cb5ce8e2cc0dbbf7ce
   Team/index.html:
     link_URL: https://2021.igem.org/Team:UTokyo/Team
-    md5: c0f2dca6c38ccf1cdf514c74e13defa1
+    md5: 521ad7e12d591dd22c2d1cedcad9d431
   Team\index.html:
     link_URL: https://2021.igem.org/Team:UTokyo/Team
     md5: 808756afddfa1e31e8466000f66a91ac
