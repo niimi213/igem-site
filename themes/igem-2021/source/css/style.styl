@@ -1,6 +1,8 @@
 header-height = 52px
 igem-menu-height = 18px
 eyecatch-height = 320px
+mobile-max-width = 767px
+
 @font-face
   font-family FontAwesome
   font-style normal
@@ -66,7 +68,7 @@ body
   display flex
   flex-direction row
   align-items center
-  @media (max-width 767px)
+  @media (max-width mobile-max-width)
     justify-content center
 
   a
@@ -82,7 +84,7 @@ body
     font-weight 500
     font-size 18px
     line-height header-height
-    @media (max-width 767px)
+    @media (max-width mobile-max-width)
       margin 0
 
 
@@ -94,7 +96,7 @@ body
     margin-right 12.5%
     font-family Roboto
     height 100%
-    @media (max-width 767px)
+    @media (max-width mobile-max-width)
       display none
     a
       margin-left 50px
@@ -148,7 +150,7 @@ body
     top 0
     right 0
     height header-height
-    @media (max-width 767px)
+    @media (max-width mobile-max-width)
       display flex
     svg
       cursor pointer
@@ -167,7 +169,7 @@ body
     max-height 0
     overflow scroll
     transition max-height .5s ease 0s
-    @media (max-width 767px)
+    @media (max-width mobile-max-width)
       &.header-menu-active
         max-height 50vh
     li
@@ -253,8 +255,22 @@ index-main-section-height = 650px
       :hover
         color black
         text-decoration none
+  index-back-width = 1000px
   svg.index-back
+    width index-back-width
     height index-main-section-height + header-height
+  #index-back-0-left
+    position absolute
+    left 0
+  #index-back-0-right
+    position absolute
+    left inherit
+    right 0
+  @media (max-width index-back-width)
+    #index-back-0-left
+      width 100vw
+    #index-back-0-right
+      width 100vw
 
 index-normal-section-height = 600px
 .index-section
@@ -277,6 +293,9 @@ index-normal-section-height = 600px
   box-sizing border-box
   overflow hidden
 
+  @media (max-width mobile-max-width)
+    display block
+
   .index-sec-image
     flex 1
   .index-sec-image-3
@@ -298,6 +317,8 @@ index-normal-section-height = 600px
 
 .index-sec-separator
   width 120px
+  @media (max-width mobile-max-width)
+    display none
 
 #kingyo
   position absolute
@@ -327,7 +348,7 @@ index-normal-section-height = 600px
   font-size 24px
 
 footer
-  background-color #C4C4C4
+  background-color rgba(200, 238, 250, 0.8)
   height 520px
   padding 0 12.5vw
   box-sizing border-box
@@ -420,6 +441,7 @@ footer
   img
     width 240px
     height auto
+    border-radius 120px
   h3
     margin-top 11px
     margin-bottom 10px
@@ -429,3 +451,27 @@ footer
     margin-top 10px
     font-size 12px
     line-height 24px
+  .face
+    width 240px
+    height 240px
+    background-size cover
+    overflow hidden
+    border-radius 120px
+    .face-back
+      position absolute
+      z-index -1
+    .sushi
+      width 100%
+      height 100%
+      border-radius 120px
+      background-color #EEB5B5
+      padding 20px
+      text-align center
+      box-sizing border-box
+      display flex
+      flex-direction column
+      justify-content center
+      align-items center
+      transform translateX(-100%)
+      img
+        width 160px
