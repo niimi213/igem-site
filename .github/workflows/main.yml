@@ -58,3 +58,4 @@ jobs:
         git config --global user.name "igem-utokyo-automated"
         git commit --allow-empty -m "[CI] updated upload map" &&
         git push origin master
+    - run: mkdir /home/runner/.npm
