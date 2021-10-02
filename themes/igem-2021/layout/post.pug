@@ -1,5 +1,5 @@
 .contents-wrapper
-  img.eyecatch(src=page.eyecatch)
+  div.eyecatch(style={'background-image': `url(${page.eyecatch})`})
   .article-wrapper
     .page-navigation
       != toc(page.content)
