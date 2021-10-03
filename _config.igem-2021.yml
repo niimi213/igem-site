@@ -20,6 +20,7 @@ menu:
     submenus:
       Model: /Model/
       Hardware: /Hardware/
+      Software: /Software/
   Human Practice: 
     link: /Human_Practice/
     submenus:
