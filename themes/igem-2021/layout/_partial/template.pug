@@ -1,2 +1,11 @@
 if (page.eyecatch)
   div.eyecatch(style={'background-image': `url(${page.eyecatch})`})
+if (type=='post')
+  .article-wrapper
+    .page-navigation
+      != toc(page.content)
+    article.post
+      != partial('_partial/article', { post: page })
+else 
+  article.page
+    != partial('_partial/article', { post: page })

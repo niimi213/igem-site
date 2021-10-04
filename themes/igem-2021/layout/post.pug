@@ -1,8 +1,3 @@
 .contents-wrapper
-  != partial('_partial/template')
-  .article-wrapper
-    .page-navigation
-      != toc(page.content)
-    article.post
-      != partial('_partial/article', { post: page })
+  != partial('_partial/template',{type: 'post'})
 != js('js/submenu.js')
